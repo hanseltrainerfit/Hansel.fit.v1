@@ -1,3 +1,0 @@
-/* Cloudflare Pages _redirects
-   SPA fallback — serves index.html for any unmatched path */
-/*    /index.html 200
