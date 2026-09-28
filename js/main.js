@@ -1,54 +1,46 @@
 /**
- * HANSEL FIT — main.js
- * All interactions, animations, and dynamic features.
- * Fully compatible with file:// opening (no ES modules, no fetch).
+ * HANSEL FIT — main.js v2.0
+ * Interacciones, animaciones y funcionalidades dinámicas.
+ * Compatible con apertura directa por file:// (sin módulos ES, sin fetch).
  */
 
 (function () {
   'use strict';
 
-  /* ── Config (edit these values) ──────────────────────── */
+  /* ── Configuración — datos reales de contacto ─────────── */
   var CONFIG = {
-    whatsappNumber: 'YOUR_PHONE_NUMBER', // e.g. '573001234567' (no +, no spaces)
-    whatsappDefaultMsg: 'Hello Hansel! I am interested in your coaching services.',
-    instagramHandle: 'YOUR_INSTAGRAM_HANDLE',
-    contactEmail: 'YOUR_EMAIL@domain.com'
+    whatsappNumber:     '573043557549',
+    whatsappDefaultMsg: 'Hola Hansel, vi tu página web y quiero información sobre tus servicios.',
+    instagramHandle:    'johnhansel_fit',
+    instagramUrl:       'https://www.instagram.com/johnhansel_fit/',
+    facebookUrl:        'https://www.facebook.com/share/17u6CvQMzS/',
+    contactEmail:       'hansel.trainer.fit@gmail.com'
   };
 
-  /* ── Utility: whatsapp link ───────────────────────────── */
+  /* ── Utilidad: construir enlace de WhatsApp ───────────── */
   function waLink(msg) {
     var m = msg || CONFIG.whatsappDefaultMsg;
-    if (CONFIG.whatsappNumber === 'YOUR_PHONE_NUMBER') {
-      return '#contact'; // fallback when not configured
-    }
     return 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(m);
   }
 
-  /* ── Set WhatsApp links ───────────────────────────────── */
+  /* ── Inicializar WhatsApp (solo elementos data-wa legados) */
   function initWhatsApp() {
-    var floatBtn = document.getElementById('wa-float');
-    if (floatBtn) {
-      floatBtn.href = waLink();
-      if (CONFIG.whatsappNumber === 'YOUR_PHONE_NUMBER') {
-        floatBtn.setAttribute('title', 'WhatsApp — configure phone number in js/main.js');
-      }
-    }
+    // El botón flotante ya tiene href real en el HTML
+    // Solo procesamos elementos con [data-wa] si quedan del HTML v1
     document.querySelectorAll('[data-wa]').forEach(function (el) {
       var msg = el.getAttribute('data-wa-msg') || CONFIG.whatsappDefaultMsg;
       el.href = waLink(msg);
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
     });
-  }
 
-  /* ── Set Instagram links ─────────────────────────────── */
-  function initSocial() {
+    // Elementos con [data-ig] legados
     document.querySelectorAll('[data-ig]').forEach(function (el) {
-      if (CONFIG.instagramHandle !== 'YOUR_INSTAGRAM_HANDLE') {
-        el.href = 'https://instagram.com/' + CONFIG.instagramHandle;
-      }
+      el.href = CONFIG.instagramUrl;
     });
   }
 
-  /* ── Navbar scroll behavior ───────────────────────────── */
+  /* ── Navbar: transparente → sólido al hacer scroll ───── */
   function initNavbar() {
     var navbar = document.getElementById('navbar');
     if (!navbar) return;
@@ -63,7 +55,7 @@
     updateNav();
   }
 
-  /* ── Active nav link on scroll ───────────────────────── */
+  /* ── Scroll Spy: resaltar enlace de nav activo ────────── */
   function initScrollSpy() {
     var links = document.querySelectorAll('.nav-link[data-section]');
     var sections = [];
@@ -86,7 +78,7 @@
     update();
   }
 
-  /* ── Mobile menu ──────────────────────────────────────── */
+  /* ── Menú móvil ───────────────────────────────────────── */
   function initMobileMenu() {
     var hamburger = document.getElementById('hamburger');
     var mobileMenu = document.getElementById('mobile-menu');
@@ -95,6 +87,8 @@
 
     function openMenu() {
       hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'Cerrar menú');
       mobileMenu.classList.add('visible');
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
@@ -105,6 +99,8 @@
     }
     function closeMenu() {
       hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Abrir menú');
       mobileMenu.classList.remove('open');
       document.body.style.overflow = '';
       setTimeout(function () { mobileMenu.classList.remove('visible'); }, 400);
@@ -116,6 +112,10 @@
     mobileLinks.forEach(function (l) { l.addEventListener('click', closeMenu); });
     mobileMenu.addEventListener('click', function (e) {
       if (e.target === mobileMenu) closeMenu();
+    });
+    // ESC para cerrar
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
     });
   }
 
@@ -138,17 +138,16 @@
     els.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ── FAQ Accordion ────────────────────────────────────── */
+  /* ── Acordeón FAQ ─────────────────────────────────────── */
   function initFAQ() {
     var items = document.querySelectorAll('.faq-item');
     items.forEach(function (item) {
       var btn = item.querySelector('.faq-question');
       var answer = item.querySelector('.faq-answer');
       if (!btn || !answer) return;
-      btn.setAttribute('aria-expanded', 'false');
       btn.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
-        // close all
+        // cerrar todos
         items.forEach(function (i) {
           i.classList.remove('open');
           var a = i.querySelector('.faq-answer');
@@ -162,7 +161,6 @@
           btn.setAttribute('aria-expanded', 'true');
         }
       });
-      // keyboard
       btn.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -172,13 +170,13 @@
     });
   }
 
-  /* ── Before / After Comparator ────────────────────────── */
+  /* ── Comparador Antes / Después ───────────────────────── */
   function initComparators() {
     var wrappers = document.querySelectorAll('.before-after-wrapper');
     wrappers.forEach(function (wrapper) {
       var beforeImg = wrapper.querySelector('.before-img');
-      var divider = wrapper.querySelector('.ba-divider');
-      var handle = wrapper.querySelector('.ba-handle');
+      var divider   = wrapper.querySelector('.ba-divider');
+      var handle    = wrapper.querySelector('.ba-handle');
       if (!beforeImg || !divider || !handle) return;
 
       var dragging = false;
@@ -187,7 +185,7 @@
       function setPosition(p) {
         pct = Math.max(2, Math.min(98, p));
         divider.style.left = pct + '%';
-        handle.style.left = pct + '%';
+        handle.style.left  = pct + '%';
         beforeImg.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
       }
 
@@ -198,7 +196,7 @@
         return ((clientX - rect.left) / rect.width) * 100;
       }
 
-      // Mouse
+      // Ratón
       wrapper.addEventListener('mousedown', function (e) {
         dragging = true;
         setPosition(getPercent(e.clientX));
@@ -210,7 +208,7 @@
       });
       document.addEventListener('mouseup', function () { dragging = false; });
 
-      // Touch
+      // Táctil
       wrapper.addEventListener('touchstart', function (e) {
         dragging = true;
         setPosition(getPercent(e.touches[0].clientX));
@@ -221,18 +219,17 @@
       }, { passive: true });
       wrapper.addEventListener('touchend', function () { dragging = false; });
 
-      // Keyboard
-      wrapper.setAttribute('tabindex', '0');
+      // Teclado
       wrapper.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') setPosition(pct - 5);
+        if (e.key === 'ArrowLeft')  setPosition(pct - 5);
         if (e.key === 'ArrowRight') setPosition(pct + 5);
       });
     });
   }
 
-  /* ── Training filter tabs ─────────────────────────────── */
+  /* ── Filtros de tarjetas de contenido ─────────────────── */
   function initTrainingFilters() {
-    var btns = document.querySelectorAll('.filter-btn');
+    var btns  = document.querySelectorAll('.filter-btn');
     var cards = document.querySelectorAll('.training-card');
     btns.forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -241,56 +238,59 @@
         var filter = btn.getAttribute('data-filter');
         cards.forEach(function (card) {
           var cat = card.getAttribute('data-category');
-          if (filter === 'all' || cat === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
+          card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
         });
       });
     });
   }
 
-  /* ── Contact form ─────────────────────────────────────── */
+  /* ── Formulario de contacto → WhatsApp ───────────────── */
   function initContactForm() {
     var form = document.getElementById('contact-form');
     if (!form) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name    = (form.querySelector('[name="name"]') || {}).value || '';
-      var email   = (form.querySelector('[name="email"]') || {}).value || '';
+
+      var name    = (form.querySelector('[name="name"]')    || {}).value || '';
       var service = (form.querySelector('[name="service"]') || {}).value || '';
-      var goal    = (form.querySelector('[name="goal"]') || {}).value || '';
+      var goal    = (form.querySelector('[name="goal"]')    || {}).value || '';
       var message = (form.querySelector('[name="message"]') || {}).value || '';
 
-      var msg = 'Hello Hansel! My name is ' + name + '.'
-        + (service ? ' I am interested in: ' + service + '.' : '')
-        + (goal    ? ' My main goal is: ' + goal + '.' : '')
-        + (message ? ' Additional info: ' + message : '');
+      // Validar nombre
+      if (!name.trim()) {
+        var nameInput = form.querySelector('[name="name"]');
+        if (nameInput) {
+          nameInput.focus();
+          nameInput.style.borderColor = 'var(--gold)';
+          setTimeout(function () { nameInput.style.borderColor = ''; }, 2000);
+        }
+        return;
+      }
+
+      var msg = 'Hola Hansel, mi nombre es ' + name.trim() + '.'
+        + (service ? ' Estoy interesado en: ' + service + '.' : '')
+        + (goal    ? ' Mi meta principal es: ' + goal + '.' : '')
+        + (message ? ' Información adicional: ' + message.trim() : '');
 
       var link = waLink(msg);
-      if (link === '#contact' || link.startsWith('#')) {
-        // WhatsApp not configured — fallback to mailto
-        window.location.href = 'mailto:' + CONFIG.contactEmail
-          + '?subject=Coaching Inquiry – ' + encodeURIComponent(name)
-          + '&body=' + encodeURIComponent(msg);
-      } else {
-        window.open(link, '_blank');
-      }
+      window.open(link, '_blank');
 
       var success = document.getElementById('form-success');
       if (success) {
         success.style.display = 'block';
         setTimeout(function () { success.style.display = 'none'; }, 6000);
       }
+
+      // Limpiar formulario
+      form.reset();
     });
   }
 
-  /* ── Client Login toggle ─────────────────────────────── */
+  /* ── Portal de clientes (toggle) ─────────────────────── */
   function initLoginPage() {
-    var loginBtn = document.getElementById('btn-login');
-    var loginPage = document.getElementById('login-page');
-    var backBtn = document.getElementById('btn-back-to-site');
+    var loginBtn    = document.getElementById('btn-login');
+    var loginPage   = document.getElementById('login-page');
+    var backBtn     = document.getElementById('btn-back-to-site');
     var mainContent = document.getElementById('main-content');
     if (!loginBtn || !loginPage) return;
     loginBtn.addEventListener('click', function (e) {
@@ -308,23 +308,25 @@
     }
   }
 
-  /* ── Smooth scroll for anchor links ──────────────────── */
+  /* ── Smooth scroll para anclas ────────────────────────── */
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       a.addEventListener('click', function (e) {
         var hash = a.getAttribute('href');
-        if (!hash || hash === '#' || hash === '#contact' && !document.querySelector(hash)) return;
+        if (!hash || hash === '#') return;
         var target = document.querySelector(hash);
         if (!target) return;
         e.preventDefault();
-        var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 80;
+        var navH = parseInt(
+          getComputedStyle(document.documentElement).getPropertyValue('--nav-h')
+        ) || 80;
         var top = target.getBoundingClientRect().top + window.scrollY - navH;
         window.scrollTo({ top: top, behavior: 'smooth' });
       });
     });
   }
 
-  /* ── Parallax (very subtle, respects reduced-motion) ──── */
+  /* ── Parallax sutil (respeta prefers-reduced-motion) ──── */
   function initParallax() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var parallaxEls = document.querySelectorAll('[data-parallax]');
@@ -338,10 +340,9 @@
     }, { passive: true });
   }
 
-  /* ── Init ────────────────────────────────────────────── */
+  /* ── Inicialización ───────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     initWhatsApp();
-    initSocial();
     initNavbar();
     initScrollSpy();
     initMobileMenu();

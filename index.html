@@ -1,372 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- ── SEO ────────────────────────────────────────────── -->
-  <title>Hansel Fit | Personal Trainer &amp; Fitness Coach</title>
-  <meta name="description" content="Hansel Cerquera — Personal Trainer &amp; Fitness Coach. Personalized training, hypertrophy, online coaching and real body transformation. Train with purpose." />
+  <!-- SEO -->
+  <title>Hansel Fit | Entrenador Personal y Coaching Online</title>
+  <meta name="description" content="Entrenamiento personalizado, coaching online y asesoría para transformar tu físico y mejorar tus hábitos con la metodología Hansel Fit. Hansel Cerquera, entrenador personal." />
   <meta name="author" content="Hansel Cerquera" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ── Open Graph ─────────────────────────────────────── -->
+  <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Hansel Fit | Personal Trainer &amp; Fitness Coach" />
-  <meta property="og:description" content="Personalized training, hypertrophy, online coaching and real body transformation. Train with purpose." />
+  <meta property="og:title"       content="Hansel Fit | Entrenador Personal y Coaching Online" />
+  <meta property="og:description" content="Entrenamiento personalizado, coaching online y asesoría para transformar tu físico y mejorar tus hábitos con la metodología Hansel Fit." />
   <meta property="og:image"       content="public/images/hero/hero-main.jpeg" />
   <meta property="og:url"         content="https://hanselfit.com" />
+  <meta property="og:locale"      content="es_CO" />
   <meta name="twitter:card"       content="summary_large_image" />
 
-  <!-- ── Favicon (configure your real favicon) ─────────── -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111'/><text x='50%25' y='62%25' dominant-baseline='middle' text-anchor='middle' fill='%23B99751' font-size='20' font-family='Arial' font-weight='bold'>H</text></svg>" />
 
-  <!-- ── Google Fonts (online only — system fonts used offline) ── -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
-        media="all"
-        onerror="this.media='none'" />
+        media="all" onerror="this.media='none'" />
 
-  <!-- ── Stylesheet ─────────────────────────────────────── -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- ── Analytics placeholder (configure before deploying) ─ -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
 </head>
 <body>
 
-<!-- ╔═══════════════════════════════════════════════════════╗
-     ║  NAVIGATION                                           ║
-     ╚═══════════════════════════════════════════════════════╝ -->
+<!-- NAVEGACIÓN -->
 <header id="navbar" role="banner">
   <div class="container">
-    <nav class="nav-inner" aria-label="Main navigation">
-
-      <a href="#hero" class="nav-logo" aria-label="Hansel Fit — Home">
+    <nav class="nav-inner" aria-label="Navegación principal">
+      <a href="#hero" class="nav-logo" aria-label="Hansel Fit — Inicio">
         <span class="logo-main">HANSEL FIT</span>
-        <span class="logo-sub">Personal Trainer</span>
+        <span class="logo-sub">Entrenador Personal</span>
       </a>
-
       <ul class="nav-links" role="list">
-        <li><a href="#about"    class="nav-link" data-section="about">About</a></li>
-        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
-        <li><a href="#method"   class="nav-link" data-section="method">Method</a></li>
-        <li><a href="#results"  class="nav-link" data-section="results">Results</a></li>
-        <li><a href="#training" class="nav-link" data-section="training">Training</a></li>
+        <li><a href="#about"    class="nav-link" data-section="about">Sobre mí</a></li>
+        <li><a href="#services" class="nav-link" data-section="services">Servicios</a></li>
+        <li><a href="#method"   class="nav-link" data-section="method">Método</a></li>
+        <li><a href="#results"  class="nav-link" data-section="results">Resultados</a></li>
+        <li><a href="#training" class="nav-link" data-section="training">Contenido</a></li>
         <li><a href="#faq"      class="nav-link" data-section="faq">FAQ</a></li>
-        <li><a href="#contact"  class="nav-link" data-section="contact">Contact</a></li>
+        <li><a href="#contact"  class="nav-link" data-section="contact">Contacto</a></li>
       </ul>
-
       <div class="nav-actions">
-        <a href="#" id="btn-login" class="btn-login" aria-label="Client Login Portal">CLIENT LOGIN</a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <a href="#" id="btn-login" class="btn-login" aria-label="Portal de clientes">PORTAL CLIENTES</a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
-
     </nav>
   </div>
 </header>
 
-<!-- Mobile Menu -->
-<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" role="navigation">
+<!-- Menú móvil -->
+<nav class="mobile-menu" id="mobile-menu" aria-label="Navegación móvil" role="navigation">
   <ul role="list" style="display:flex;flex-direction:column;gap:0;">
-    <li><a href="#about"    class="mobile-nav-link">About</a></li>
-    <li><a href="#services" class="mobile-nav-link">Services</a></li>
-    <li><a href="#method"   class="mobile-nav-link">Method</a></li>
-    <li><a href="#results"  class="mobile-nav-link">Results</a></li>
-    <li><a href="#training" class="mobile-nav-link">Training</a></li>
+    <li><a href="#about"    class="mobile-nav-link">Sobre mí</a></li>
+    <li><a href="#services" class="mobile-nav-link">Servicios</a></li>
+    <li><a href="#method"   class="mobile-nav-link">Método</a></li>
+    <li><a href="#results"  class="mobile-nav-link">Resultados</a></li>
+    <li><a href="#training" class="mobile-nav-link">Contenido</a></li>
     <li><a href="#faq"      class="mobile-nav-link">FAQ</a></li>
-    <li><a href="#contact"  class="mobile-nav-link">Contact</a></li>
+    <li><a href="#contact"  class="mobile-nav-link">Contacto</a></li>
   </ul>
   <div class="mobile-menu-footer">
-    <a href="#" class="btn btn-outline-gold mobile-nav-link" style="font-size:11px;letter-spacing:.18em;">CLIENT LOGIN</a>
-    <a href="#contact" class="btn btn-primary mobile-nav-link">APPLY FOR COACHING</a>
+    <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20vi%20tu%20p%C3%A1gina%20web%20y%20quiero%20saber%20m%C3%A1s%20sobre%20tus%20servicios."
+       class="btn btn-primary mobile-nav-link"
+       target="_blank" rel="noopener noreferrer">
+      QUIERO ENTRENAR CONTIGO
+    </a>
   </div>
 </nav>
 
-<!-- ╔═══════════════════════════════════════════════════════╗
-     ║  MAIN CONTENT                                         ║
-     ╚═══════════════════════════════════════════════════════╝ -->
 <div id="main-content">
 
-<!-- ════════════════════════════════════════════════════════
-     §1 HERO
-     ════════════════════════════════════════════════════════ -->
-<section id="hero" aria-label="Hero — Train With Purpose">
-
-  <!-- Left: content -->
+<!-- §1 HERO -->
+<section id="hero" aria-label="Portada — Entrena con propósito">
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-line" aria-hidden="true"></span>
-      <span class="hero-eyebrow-text">Personal Trainer &amp; Fitness Coach</span>
+      <span class="hero-eyebrow-text">Entrenador Personal &amp; Fitness Coach</span>
     </div>
-
     <h1 class="hero-title">
-      TRAIN
-      <em>WITH</em>
-      PURPOSE.
+      ENTRENA
+      <em>CON</em>
+      PROPÓSITO.
     </h1>
-
     <p class="hero-subtitle">
-      Individualized training, real methodology and consistent follow-up.
-      Your transformation, built around who you are and where you want to go.
+      Entrenamiento individualizado, metodología real y seguimiento constante.
+      Tu transformación, construida alrededor de quién eres y a dónde quieres llegar.
     </p>
-
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary btn-arrow">APPLY FOR COACHING</a>
-      <a href="#services" class="btn btn-outline">EXPLORE MY SERVICES</a>
+      <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20quiero%20comenzar%20mi%20transformaci%C3%B3n%20y%20solicitar%20asesor%C3%ADa."
+         class="btn btn-primary btn-arrow"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Comenzar mi transformación por WhatsApp">
+        COMENZAR MI TRANSFORMACIÓN
+      </a>
+      <a href="#services" class="btn btn-outline">VER MIS SERVICIOS</a>
     </div>
-
     <div class="hero-scroll" aria-hidden="true">
       <div class="scroll-line"></div>
       <span class="scroll-text">Scroll</span>
     </div>
   </div>
-
-  <!-- Right: photo -->
   <div class="hero-image-col">
     <img
       src="public/images/hero/hero-main.jpeg"
-      alt="Hansel Cerquera — Personal Trainer"
+      alt="Hansel Cerquera — Entrenador Personal"
       fetchpriority="high"
       decoding="async"
     />
     <div class="hero-image-overlay" aria-hidden="true"></div>
-    <div class="hero-badge">Train with purpose</div>
+    <div class="hero-badge">Entrena con propósito</div>
   </div>
-
 </section>
 
-<!-- ════════════════════════════════════════════════════════
-     §2 ABOUT
-     ════════════════════════════════════════════════════════ -->
-<section id="about" class="section-pad" aria-label="About Hansel">
+<!-- §2 SOBRE MÍ -->
+<section id="about" class="section-pad" aria-label="Sobre Hansel">
   <div class="container">
     <div class="about-grid">
 
-      <!-- Portrait column -->
+      <!-- Retrato — sin recuadro dorado ni etiqueta flotante -->
       <div class="about-portrait reveal-left">
-        <span class="about-portrait-label" aria-hidden="true">Hansel Fit</span>
         <img
           class="about-portrait-img"
           src="public/images/about/about-portrait.jpeg"
-          alt="Hansel Cerquera, Personal Trainer"
-          loading="lazy"
-          decoding="async"
-          width="600" height="800"
+          alt="Hansel Cerquera, Entrenador Personal"
+          loading="lazy" decoding="async" width="600" height="800"
         />
-        <div class="about-portrait-accent" aria-hidden="true"></div>
       </div>
 
-      <!-- Text column -->
+      <!-- Texto -->
       <div class="about-content">
-
         <div class="about-section-label reveal">
           <span class="line-gold" aria-hidden="true"></span>
-          About Hansel
+          Sobre Hansel
         </div>
-
         <h2 class="about-title reveal">
-          A TRAINER<br>WHO TAKES<br>YOUR PROCESS<br>SERIOUSLY.
+          UN ENTRENADOR<br>QUE TOMA TU<br>PROCESO<br>EN SERIO.
         </h2>
-
         <p class="about-intro reveal">
-          I'm Hansel Cerquera, a personal trainer and fitness coach. My work is centered
-          on one thing: helping you train better, progress consistently and build a body
-          that reflects the effort you put in.
+          Soy Hansel Cerquera, entrenador personal y coach fitness. Mi trabajo se enfoca en
+          una sola cosa: ayudarte a entrenar mejor, progresar de forma constante y construir
+          un cuerpo que refleje el esfuerzo que pones.
         </p>
-
         <p class="about-intro reveal">
-          I work with people who are ready to commit — from beginners taking their first
-          real steps, to athletes looking to refine their approach. Every client gets a
-          program designed specifically for them, not a template.
+          Trabajo con personas dispuestas a comprometerse — desde principiantes que dan sus
+          primeros pasos reales, hasta deportistas que quieren refinar su enfoque. Cada
+          cliente recibe un programa diseñado específicamente para él, no una plantilla genérica.
         </p>
-
         <blockquote class="about-philosophy reveal">
-          "Technique, planning,<br>progression and individual<br>follow-up. Nothing less."
+          "Técnica, planificación,<br>progresión y seguimiento<br>individual. Nada menos."
         </blockquote>
-
         <div class="about-pillars reveal">
           <div class="about-pillar">
             <div class="pillar-icon" aria-hidden="true">01</div>
-            <div class="pillar-text"><strong>Technical precision.</strong> Every movement matters.</div>
+            <div class="pillar-text"><strong>Precisión técnica.</strong> Cada movimiento importa.</div>
           </div>
           <div class="about-pillar">
             <div class="pillar-icon" aria-hidden="true">02</div>
-            <div class="pillar-text"><strong>Smart programming.</strong> Built around your life.</div>
+            <div class="pillar-text"><strong>Programación inteligente.</strong> Adaptada a tu vida.</div>
           </div>
           <div class="about-pillar">
             <div class="pillar-icon" aria-hidden="true">03</div>
-            <div class="pillar-text"><strong>Real progression.</strong> Week by week, measurable.</div>
+            <div class="pillar-text"><strong>Progresión real.</strong> Semana a semana, medible.</div>
           </div>
           <div class="about-pillar">
             <div class="pillar-icon" aria-hidden="true">04</div>
-            <div class="pillar-text"><strong>Close follow-up.</strong> You are never training alone.</div>
+            <div class="pillar-text"><strong>Seguimiento cercano.</strong> Nunca entrenas solo.</div>
           </div>
         </div>
-
         <div class="reveal" style="margin-top:36px;">
-          <a href="#contact" class="btn btn-dark btn-arrow">START YOUR JOURNEY</a>
+          <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20quiero%20iniciar%20mi%20proceso%20de%20entrenamiento."
+             class="btn btn-dark btn-arrow"
+             target="_blank" rel="noopener noreferrer">
+            QUIERO ENTRENAR CONTIGO
+          </a>
         </div>
-
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════
-     §3 SERVICES
-     ════════════════════════════════════════════════════════ -->
-<section id="services" class="section-pad" aria-label="Services">
+<!-- §3 SERVICIOS -->
+<section id="services" class="section-pad" aria-label="Servicios">
   <div class="container">
     <div class="section-header reveal">
       <div class="label-row">
         <span class="line-gold" aria-hidden="true"></span>
-        <span class="section-label">What I offer</span>
+        <span class="section-label">Lo que ofrezco</span>
       </div>
-      <h2 class="section-title">SERVICES<br><span style="color:var(--gold);">DESIGNED<br>FOR YOU.</span></h2>
+      <h2 class="section-title">SERVICIOS<br><span style="color:var(--gold);">DISEÑADOS<br>PARA TI.</span></h2>
       <p class="section-desc">
-        Each service is structured to match your real situation — your schedule, your goals,
-        your level and your equipment. No generic programs.
+        Cada servicio está estructurado para adaptarse a tu situación real — tu horario, tus metas,
+        tu nivel y tu equipamiento. Sin programas genéricos.
       </p>
     </div>
   </div>
 
   <div class="services-grid" role="list">
 
-    <!-- A. Personal Training -->
+    <!-- A. Entrenamiento Personal -->
     <article class="service-card reveal" role="listitem">
       <div class="service-card-img">
-        <img
-          src="public/images/services/service-personal-training.jpeg"
-          alt="Personal Training with Hansel Fit"
-          loading="lazy" decoding="async" width="400" height="533"
-        />
+        <img src="public/images/services/service-personal-training.jpeg"
+             alt="Entrenamiento personal con Hansel Fit"
+             loading="lazy" decoding="async" width="400" height="533" />
         <div class="service-card-img-overlay" aria-hidden="true"></div>
         <span class="service-number">A</span>
       </div>
       <div class="service-card-body">
-        <div class="service-tag">In-person</div>
-        <h3 class="service-title">PERSONAL<br>TRAINING</h3>
+        <div class="service-tag">Presencial</div>
+        <h3 class="service-title">ENTRENAMIENTO<br>PERSONAL</h3>
         <p class="service-desc">
-          One-on-one training sessions with full technical supervision. 
-          Each session is structured, progressed and adapted to your 
-          individual development.
+          Sesiones individuales con supervisión técnica completa.
+          Cada sesión es estructurada, progresiva y adaptada a tu desarrollo personal.
         </p>
-        <ul class="service-benefits" aria-label="Included">
-          <li class="service-benefit">Full technical coaching on every exercise</li>
-          <li class="service-benefit">Progressive programming session to session</li>
-          <li class="service-benefit">Real-time adjustments and corrections</li>
-          <li class="service-benefit">Ideal for those who thrive with in-person accountability</li>
+        <ul class="service-benefits" aria-label="Qué incluye">
+          <li class="service-benefit">Supervisión técnica en cada ejercicio</li>
+          <li class="service-benefit">Programación progresiva sesión a sesión</li>
+          <li class="service-benefit">Correcciones y ajustes en tiempo real</li>
+          <li class="service-benefit">Ideal si buscas acompañamiento presencial</li>
         </ul>
-        <a href="#contact"
+        <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20estoy%20interesado%20en%20el%20entrenamiento%20personal%20presencial."
            class="service-cta"
-           data-wa-msg="Hello Hansel! I am interested in Personal Training."
-           aria-label="Apply for Personal Training">
-          APPLY FOR PERSONAL TRAINING
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Consultar entrenamiento personal por WhatsApp">
+          CONSULTAR POR WHATSAPP
         </a>
       </div>
     </article>
 
-    <!-- B. Online Coaching -->
+    <!-- B. Coaching Online -->
     <article class="service-card reveal reveal-delay-1" role="listitem">
       <div class="service-card-img">
-        <img
-          src="public/images/services/service-online-coaching.jpeg"
-          alt="Online Coaching with Hansel Fit"
-          loading="lazy" decoding="async" width="400" height="533"
-        />
+        <img src="public/images/services/service-online-coaching.jpeg"
+             alt="Coaching online con Hansel Fit"
+             loading="lazy" decoding="async" width="400" height="533" />
         <div class="service-card-img-overlay" aria-hidden="true"></div>
         <span class="service-number">B</span>
       </div>
       <div class="service-card-body">
-        <div class="service-tag">Remote</div>
-        <h3 class="service-title">ONLINE<br>COACHING</h3>
+        <div class="service-tag">Online</div>
+        <h3 class="service-title">COACHING<br>ONLINE</h3>
         <p class="service-desc">
-          Personalized online coaching with a complete training program,
-          weekly check-ins and ongoing support — wherever you are.
+          Acompañamiento personalizado a distancia con programa de entrenamiento,
+          seguimiento semanal y soporte continuo — donde estés.
         </p>
-        <ul class="service-benefits" aria-label="Included">
-          <li class="service-benefit">Custom training program built for you</li>
-          <li class="service-benefit">Weekly check-ins and progress review</li>
-          <li class="service-benefit">Video technique feedback</li>
-          <li class="service-benefit">Direct communication with your coach</li>
+        <ul class="service-benefits" aria-label="Qué incluye">
+          <li class="service-benefit">Plan de entrenamiento personalizado</li>
+          <li class="service-benefit">Seguimiento semanal y revisión de progreso</li>
+          <li class="service-benefit">Retroalimentación de técnica por video</li>
+          <li class="service-benefit">Comunicación directa con tu coach</li>
         </ul>
-        <a href="#contact"
+        <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20quiero%20iniciar%20el%20coaching%20online%20de%20transformaci%C3%B3n."
            class="service-cta"
-           data-wa-msg="Hello Hansel! I want to start Online Coaching."
-           aria-label="Start Online Coaching">
-          START ONLINE COACHING
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Iniciar coaching online por WhatsApp">
+          CONSULTAR POR WHATSAPP
         </a>
       </div>
     </article>
 
-    <!-- C. Training Plans -->
+    <!-- C. Planes de Entrenamiento -->
     <article class="service-card reveal reveal-delay-2" role="listitem">
       <div class="service-card-img">
-        <img
-          src="public/images/services/service-training-plans.jpeg"
-          alt="Personalized Training Plans by Hansel Fit"
-          loading="lazy" decoding="async" width="400" height="533"
-        />
+        <img src="public/images/services/service-training-plans.jpeg"
+             alt="Planes de entrenamiento personalizados por Hansel Fit"
+             loading="lazy" decoding="async" width="400" height="533" />
         <div class="service-card-img-overlay" aria-hidden="true"></div>
         <span class="service-number">C</span>
       </div>
       <div class="service-card-body">
-        <div class="service-tag">Programming</div>
-        <h3 class="service-title">PERSONALIZED<br>TRAINING PLANS</h3>
+        <div class="service-tag">Programación</div>
+        <h3 class="service-title">PLANES DE<br>ENTRENAMIENTO</h3>
         <p class="service-desc">
-          Structured training routines designed specifically for your goals,
-          fitness level, available schedule and equipment.
+          Rutinas diseñadas según tus metas, nivel de condición,
+          disponibilidad horaria y equipamiento.
         </p>
-        <ul class="service-benefits" aria-label="Included">
-          <li class="service-benefit">Fully structured, progressive plan</li>
-          <li class="service-benefit">Adapted to gym, home or limited equipment</li>
-          <li class="service-benefit">Clear instructions for each exercise</li>
-          <li class="service-benefit">For those who prefer to train independently</li>
+        <ul class="service-benefits" aria-label="Qué incluye">
+          <li class="service-benefit">Plan estructurado y progresivo</li>
+          <li class="service-benefit">Adaptado a gimnasio, casa o equipo limitado</li>
+          <li class="service-benefit">Descripción clara de cada ejercicio</li>
+          <li class="service-benefit">Ideal para quienes prefieren entrenar solos</li>
         </ul>
-        <a href="#contact"
+        <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20quiero%20un%20plan%20de%20entrenamiento%20personalizado."
            class="service-cta"
-           data-wa-msg="Hello Hansel! I would like a Personalized Training Plan."
-           aria-label="Get your Training Plan">
-          GET YOUR TRAINING PLAN
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Solicitar plan de entrenamiento por WhatsApp">
+          CONSULTAR POR WHATSAPP
         </a>
       </div>
     </article>
 
-    <!-- D. Nutrition -->
+    <!-- D. Planes de Alimentación -->
     <article class="service-card reveal reveal-delay-3" role="listitem">
       <div class="service-card-img">
-        <img
-          src="public/images/services/service-nutrition.jpeg"
-          alt="Personalized Nutrition Guidance by Hansel Fit"
-          loading="lazy" decoding="async" width="400" height="533"
-        />
+        <img src="public/images/services/service-nutrition.jpeg"
+             alt="Planes de alimentación personalizados por Hansel Fit"
+             loading="lazy" decoding="async" width="400" height="533" />
         <div class="service-card-img-overlay" aria-hidden="true"></div>
         <span class="service-number">D</span>
       </div>
       <div class="service-card-body">
-        <div class="service-tag">Nutrition</div>
-        <h3 class="service-title">PERSONALIZED<br>NUTRITION PLANS</h3>
+        <div class="service-tag">Nutrición</div>
+        <h3 class="service-title">PLANES DE<br>ALIMENTACIÓN</h3>
         <p class="service-desc">
-          Nutrition guidance and planning to support your training goals.
-          Personalized to your lifestyle within the corresponding professional scope.
+          Orientación y planificación alimentaria para apoyar tus metas de entrenamiento,
+          adaptada a tu estilo de vida.
         </p>
-        <ul class="service-benefits" aria-label="Included">
-          <li class="service-benefit">Nutritional strategies aligned with your goals</li>
-          <li class="service-benefit">Practical, sustainable approach to eating</li>
-          <li class="service-benefit">Complementary to your training program</li>
-          <li class="service-benefit">Adapted to your preferences and schedule</li>
+        <ul class="service-benefits" aria-label="Qué incluye">
+          <li class="service-benefit">Estrategias nutricionales alineadas con tus metas</li>
+          <li class="service-benefit">Enfoque práctico y sostenible</li>
+          <li class="service-benefit">Complementario a tu programa de entrenamiento</li>
+          <li class="service-benefit">Adaptado a tus preferencias y horario</li>
         </ul>
-        <a href="#contact"
+        <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20quiero%20consultar%20sobre%20los%20planes%20de%20alimentaci%C3%B3n%20personalizados."
            class="service-cta"
-           data-wa-msg="Hello Hansel! I want to ask about Nutrition Plans."
-           aria-label="Ask about Nutrition Plans">
-          ASK ABOUT NUTRITION
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Consultar planes de alimentación por WhatsApp">
+          CONSULTAR POR WHATSAPP
         </a>
       </div>
     </article>
@@ -374,468 +339,365 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════
-     §4 THE HANSEL METHOD
-     ════════════════════════════════════════════════════════ -->
-<section id="method" class="section-pad" aria-label="The Hansel Method">
+<!-- §4 EL MÉTODO HANSEL -->
+<section id="method" class="section-pad" aria-label="El Método Hansel">
   <div class="container">
-
     <div class="method-intro">
       <div class="reveal-left">
         <div class="label-row" style="margin-bottom:20px;">
           <span class="line-gold" aria-hidden="true"></span>
-          <span class="section-label">My approach</span>
+          <span class="section-label">Mi enfoque</span>
         </div>
-        <h2 class="section-title">THE<br><span style="color:var(--gold);">HANSEL</span><br>METHOD.</h2>
+        <h2 class="section-title">EL<br><span style="color:var(--gold);">MÉTODO</span><br>HANSEL.</h2>
       </div>
       <div class="reveal-right" style="display:flex;align-items:flex-end;">
         <p class="section-desc" style="color:rgba(255,255,255,0.5);max-width:none;">
-          A clear, repeatable process that puts your progress at the center.
-          Four stages, one outcome: consistent, measurable transformation.
+          Un proceso claro y repetible que pone tu progreso en el centro.
+          Cuatro etapas, un resultado: transformación constante y medible.
         </p>
       </div>
     </div>
 
     <div class="method-steps" role="list">
 
-      <!-- 01 ASSESS -->
       <div class="method-step reveal" role="listitem">
         <div class="step-num" aria-hidden="true">01</div>
-        <div class="step-label">
-          <span class="step-label-line" aria-hidden="true"></span>
-          ASSESS
-        </div>
-        <h3 class="step-title">KNOW<br>THE CLIENT.</h3>
-        <p class="step-desc">
-          Understanding who you are before designing anything.
-          Your goals, experience, schedule, limitations and the real context of your life.
-        </p>
-        <img
-          class="step-img"
-          src="public/images/methodology/method-assessment.png"
-          alt="Assessment phase — understanding your client"
-          loading="lazy" decoding="async" width="320" height="240"
-        />
+        <div class="step-label"><span class="step-label-line" aria-hidden="true"></span>EVALUAR</div>
+        <h3 class="step-title">CONOCER AL<br>CLIENTE.</h3>
+        <p class="step-desc">Entender quién eres antes de diseñar cualquier cosa. Tus metas, experiencia, horario, limitaciones y el contexto real de tu vida.</p>
+        <img class="step-img" src="public/images/methodology/method-assessment.png"
+             alt="Fase de evaluación — conociendo al cliente"
+             loading="lazy" decoding="async" width="320" height="240" />
       </div>
 
-      <!-- 02 PLAN -->
       <div class="method-step reveal reveal-delay-1" role="listitem">
         <div class="step-num" aria-hidden="true">02</div>
-        <div class="step-label">
-          <span class="step-label-line" aria-hidden="true"></span>
-          PLAN
-        </div>
-        <h3 class="step-title">DESIGN<br>THE PROGRAM.</h3>
-        <p class="step-desc">
-          Building your training structure from the ground up.
-          Volume, intensity, frequency, exercise selection — everything mapped to your reality.
-        </p>
-        <img
-          class="step-img"
-          src="public/images/methodology/method-planning.png"
-          alt="Planning phase — designing your training program"
-          loading="lazy" decoding="async" width="320" height="240"
-        />
+        <div class="step-label"><span class="step-label-line" aria-hidden="true"></span>PLANIFICAR</div>
+        <h3 class="step-title">DISEÑAR EL<br>PROGRAMA.</h3>
+        <p class="step-desc">Construir tu estructura de entrenamiento desde cero. Volumen, intensidad, frecuencia, selección de ejercicios — todo mapeado a tu realidad.</p>
+        <img class="step-img" src="public/images/methodology/method-planning.png"
+             alt="Fase de planificación — diseñando el programa"
+             loading="lazy" decoding="async" width="320" height="240" />
       </div>
 
-      <!-- 03 EXECUTE -->
       <div class="method-step reveal reveal-delay-2" role="listitem">
         <div class="step-num" aria-hidden="true">03</div>
-        <div class="step-label">
-          <span class="step-label-line" aria-hidden="true"></span>
-          EXECUTE
-        </div>
-        <h3 class="step-title">APPLY<br>AND PERFORM.</h3>
-        <p class="step-desc">
-          This is where results are built. Technique, consistency, progressive overload
-          and focused follow-up — session by session.
-        </p>
-        <img
-          class="step-img"
-          src="public/images/methodology/method-execution.jpeg"
-          alt="Execution phase — training with technique and focus"
-          loading="lazy" decoding="async" width="320" height="240"
-        />
+        <div class="step-label"><span class="step-label-line" aria-hidden="true"></span>EJECUTAR</div>
+        <h3 class="step-title">APLICAR Y<br>RENDIR.</h3>
+        <p class="step-desc">Aquí se construyen los resultados. Técnica, consistencia, sobrecarga progresiva y seguimiento enfocado — sesión a sesión.</p>
+        <img class="step-img" src="public/images/methodology/method-execution.jpeg"
+             alt="Fase de ejecución — entrenando con técnica y enfoque"
+             loading="lazy" decoding="async" width="320" height="240" />
       </div>
 
-      <!-- 04 ADAPT -->
       <div class="method-step reveal reveal-delay-3" role="listitem">
         <div class="step-num" aria-hidden="true">04</div>
-        <div class="step-label">
-          <span class="step-label-line" aria-hidden="true"></span>
-          ADAPT
-        </div>
-        <h3 class="step-title">REVIEW<br>AND EVOLVE.</h3>
-        <p class="step-desc">
-          Progress is reviewed and the program is refined continuously.
-          No two phases look the same because your body — and your life — keeps changing.
-        </p>
-        <img
-          class="step-img"
-          src="public/images/methodology/method-progress.png"
-          alt="Adaptation phase — reviewing and refining your program"
-          loading="lazy" decoding="async" width="320" height="240"
-        />
+        <div class="step-label"><span class="step-label-line" aria-hidden="true"></span>ADAPTAR</div>
+        <h3 class="step-title">REVISAR Y<br>EVOLUCIONAR.</h3>
+        <p class="step-desc">El progreso se revisa y el programa se refina continuamente. No hay dos fases iguales porque tu cuerpo — y tu vida — sigue cambiando.</p>
+        <img class="step-img" src="public/images/methodology/method-progress.png"
+             alt="Fase de adaptación — revisando y mejorando el programa"
+             loading="lazy" decoding="async" width="320" height="240" />
       </div>
 
     </div>
 
     <div class="reveal" style="margin-top:clamp(40px,5vw,64px);text-align:center;">
-      <a href="#contact" class="btn btn-outline-gold btn-arrow">START THE PROCESS</a>
+      <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20quiero%20empezar%20el%20proceso%20contigo."
+         class="btn btn-outline-gold btn-arrow"
+         target="_blank" rel="noopener noreferrer">
+        INICIAR EL PROCESO
+      </a>
     </div>
 
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════
-     §5 TRANSFORMATIONS / RESULTS
-     ════════════════════════════════════════════════════════ -->
-<section id="results" class="section-pad" aria-label="Client Transformations">
+<!-- §5 TRANSFORMACIONES -->
+<section id="results" class="section-pad" aria-label="Transformaciones de clientes">
   <div class="container">
 
     <div class="section-header reveal">
       <div class="label-row">
         <span class="line-gold" aria-hidden="true"></span>
-        <span class="section-label" style="color:var(--gold);">Client Results</span>
+        <span class="section-label" style="color:var(--gold);">Resultados reales</span>
       </div>
-      <h2 class="section-title" style="color:var(--black);">REAL<br>TRANSFORMATIONS.</h2>
+      <h2 class="section-title" style="color:var(--black);">TRANSFORMACIONES<br>REALES.</h2>
       <p class="section-desc" style="color:#666;">
-        These are real clients who committed to the process.
-        Drag or swipe the slider to compare before and after.
+        Clientes reales que se comprometieron con el proceso.
+        Arrastra el comparador para ver el antes y el después.
       </p>
     </div>
 
     <div class="results-grid">
 
-      <!-- Juan -->
       <article class="result-card reveal">
-        <div class="before-after-wrapper"
-             role="img"
-             aria-label="Juan — transformation before and after"
-             tabindex="0">
-          <img class="after-img"
-               src="public/images/transformations/results-juan-after.jpeg"
-               alt="Juan — After transformation"
-               loading="lazy" decoding="async" width="400" height="600" />
-          <img class="before-img"
-               src="public/images/transformations/results-juan-before.jpeg"
-               alt="Juan — Before transformation"
-               loading="lazy" decoding="async" width="400" height="600" />
+        <div class="before-after-wrapper" role="img" aria-label="Juan — transformación antes y después" tabindex="0">
+          <img class="after-img" src="public/images/transformations/results-juan-after.jpeg"
+               alt="Juan — Después de la transformación" loading="lazy" decoding="async" width="400" height="600" />
+          <img class="before-img" src="public/images/transformations/results-juan-before.jpeg"
+               alt="Juan — Antes de la transformación" loading="lazy" decoding="async" width="400" height="600" />
           <div class="ba-divider" aria-hidden="true"></div>
           <div class="ba-handle" aria-hidden="true">⇔</div>
-          <span class="ba-label ba-label-before">BEFORE</span>
-          <span class="ba-label ba-label-after">AFTER</span>
+          <span class="ba-label ba-label-before">ANTES</span>
+          <span class="ba-label ba-label-after">DESPUÉS</span>
         </div>
         <div class="result-info">
           <div class="result-client-name">JUAN</div>
-          <p class="result-description">Consistent training, technical progression and real commitment to the process.</p>
+          <p class="result-description">Entrenamiento constante, progresión técnica y compromiso real con el proceso.</p>
         </div>
       </article>
 
-      <!-- Client 02 -->
       <article class="result-card reveal reveal-delay-1">
-        <div class="before-after-wrapper"
-             role="img"
-             aria-label="Client — transformation before and after"
-             tabindex="0">
-          <img class="after-img"
-               src="public/images/transformations/results-client-02-after.jpeg"
-               alt="Client 02 — After transformation"
-               loading="lazy" decoding="async" width="400" height="600" />
-          <img class="before-img"
-               src="public/images/transformations/results-client-02-before.jpeg"
-               alt="Client 02 — Before transformation"
-               loading="lazy" decoding="async" width="400" height="600" />
+        <div class="before-after-wrapper" role="img" aria-label="Cliente — transformación antes y después" tabindex="0">
+          <img class="after-img" src="public/images/transformations/results-client-02-after.jpeg"
+               alt="Cliente — Después de la transformación" loading="lazy" decoding="async" width="400" height="600" />
+          <img class="before-img" src="public/images/transformations/results-client-02-before.jpeg"
+               alt="Cliente — Antes de la transformación" loading="lazy" decoding="async" width="400" height="600" />
           <div class="ba-divider" aria-hidden="true"></div>
           <div class="ba-handle" aria-hidden="true">⇔</div>
-          <span class="ba-label ba-label-before">BEFORE</span>
-          <span class="ba-label ba-label-after">AFTER</span>
+          <span class="ba-label ba-label-before">ANTES</span>
+          <span class="ba-label ba-label-after">DESPUÉS</span>
         </div>
         <div class="result-info">
-          <div class="result-client-name">CLIENT</div>
-          <p class="result-description">Individualized program, structured follow-up and measurable physical change.</p>
+          <div class="result-client-name">CLIENTE</div>
+          <p class="result-description">Programa individualizado, seguimiento estructurado y cambio físico medible.</p>
         </div>
       </article>
 
-      <!-- Client 03 -->
       <article class="result-card reveal reveal-delay-2">
-        <div class="before-after-wrapper"
-             role="img"
-             aria-label="Client — transformation before and after"
-             tabindex="0">
-          <img class="after-img"
-               src="public/images/transformations/results-client-03-after.jpeg"
-               alt="Client 03 — After transformation"
-               loading="lazy" decoding="async" width="400" height="600" />
-          <img class="before-img"
-               src="public/images/transformations/results-client-03-before.jpeg"
-               alt="Client 03 — Before transformation"
-               loading="lazy" decoding="async" width="400" height="600" />
+        <div class="before-after-wrapper" role="img" aria-label="Cliente — transformación antes y después" tabindex="0">
+          <img class="after-img" src="public/images/transformations/results-client-03-after.jpeg"
+               alt="Cliente — Después de la transformación" loading="lazy" decoding="async" width="400" height="600" />
+          <img class="before-img" src="public/images/transformations/results-client-03-before.jpeg"
+               alt="Cliente — Antes de la transformación" loading="lazy" decoding="async" width="400" height="600" />
           <div class="ba-divider" aria-hidden="true"></div>
           <div class="ba-handle" aria-hidden="true">⇔</div>
-          <span class="ba-label ba-label-before">BEFORE</span>
-          <span class="ba-label ba-label-after">AFTER</span>
+          <span class="ba-label ba-label-before">ANTES</span>
+          <span class="ba-label ba-label-after">DESPUÉS</span>
         </div>
         <div class="result-info">
-          <div class="result-client-name">CLIENT</div>
-          <p class="result-description">Dedicated training protocol and sustained effort over time.</p>
+          <div class="result-client-name">CLIENTE</div>
+          <p class="result-description">Protocolo de entrenamiento dedicado y esfuerzo sostenido en el tiempo.</p>
         </div>
       </article>
 
     </div>
 
-    <!-- Testimonial -->
     <div class="results-testimonial reveal">
       <div class="testimonial-image-wrap">
-        <img
-          src="public/images/transformations/results-testimonial-01.png"
-          alt="Client testimonial"
-          loading="lazy" decoding="async"
-          onerror="this.parentElement.innerHTML='<div class=\'testimonial-placeholder\'><p>TESTIMONIAL — To be added</p></div>'"
-        />
+        <img src="public/images/transformations/results-testimonial-01.png"
+             alt="Testimonio de cliente"
+             loading="lazy" decoding="async"
+             onerror="this.parentElement.innerHTML='<div class=\'testimonial-placeholder\'><p>TESTIMONIO — Por agregar</p></div>'" />
       </div>
     </div>
 
-    <!-- CTA -->
     <div class="results-cta-wrap reveal">
       <h2 class="results-cta-label" style="color:var(--black);">
-        YOUR TRANSFORMATION<br>STARTS HERE.
+        TU TRANSFORMACIÓN<br>EMPIEZA AQUÍ.
       </h2>
-      <a href="#contact" class="btn btn-dark btn-arrow">APPLY FOR COACHING</a>
+      <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20vi%20las%20transformaciones%20y%20quiero%20comenzar%20mi%20proceso."
+         class="btn btn-dark btn-arrow"
+         target="_blank" rel="noopener noreferrer">
+        QUIERO EMPEZAR AHORA
+      </a>
     </div>
 
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════
-     §6 TRAINING IN MOTION
-     ════════════════════════════════════════════════════════ -->
-<section id="training" class="section-pad" aria-label="Training in Motion">
+<!-- §6 CONTENIDO EN MOVIMIENTO -->
+<section id="training" class="section-pad" aria-label="Contenido en movimiento">
   <div class="container">
-
     <div class="training-intro">
       <div class="reveal-left">
         <div class="label-row" style="margin-bottom:20px;">
           <span class="line-gold" aria-hidden="true"></span>
-          <span class="section-label">Content</span>
+          <span class="section-label">Contenido</span>
         </div>
-        <h2 class="section-title">TRAINING<br><span style="color:var(--gold);">IN MOTION.</span></h2>
+        <h2 class="section-title">ENTRENAMIENTO<br><span style="color:var(--gold);">EN MOVIMIENTO.</span></h2>
       </div>
       <div class="reveal-right" style="display:flex;align-items:flex-end;">
         <p style="font-size:clamp(14px,1.4vw,17px);color:rgba(255,255,255,0.45);line-height:1.75;max-width:440px;">
-          A growing library of training content. Videos, sessions and exercise reference —
-          coming as the platform evolves.
+          Una biblioteca de contenido en crecimiento. Videos, sesiones y referencia de ejercicios —
+          disponibles a medida que la plataforma evoluciona.
         </p>
       </div>
     </div>
 
-    <!-- Filter tabs -->
-    <div class="training-filters reveal" role="group" aria-label="Content category filter">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="training">Hansel Training</button>
-      <button class="filter-btn" data-filter="coaching">Coaching Sessions</button>
-      <button class="filter-btn" data-filter="library">Exercise Library</button>
-      <button class="filter-btn" data-filter="progress">Client Progress</button>
+    <div class="training-filters reveal" role="group" aria-label="Filtro por categoría">
+      <button class="filter-btn active" data-filter="all">Todo</button>
+      <button class="filter-btn" data-filter="training">Hansel Entrenando</button>
+      <button class="filter-btn" data-filter="coaching">Sesiones de Coaching</button>
+      <button class="filter-btn" data-filter="library">Biblioteca de Ejercicios</button>
+      <button class="filter-btn" data-filter="progress">Progreso de Clientes</button>
     </div>
 
-    <!-- Cards — add entries here or in a future config file -->
     <div class="training-grid">
-
       <div class="training-card reveal" data-category="training">
         <div class="training-thumb">
-          <img src="public/images/hero/hero-training.jpeg"
-               alt="Hansel training session"
+          <img src="public/images/hero/hero-training.jpeg" alt="Sesión de entrenamiento Hansel"
                loading="lazy" decoding="async" width="400" height="250" />
-          <div class="training-thumb-overlay">
-            <div class="play-badge" aria-hidden="true">▶</div>
-          </div>
-          <span class="coming-soon-badge">Coming Soon</span>
+          <div class="training-thumb-overlay"><div class="play-badge" aria-hidden="true">▶</div></div>
+          <span class="coming-soon-badge">Próximamente</span>
         </div>
         <div class="training-meta">
-          <div class="training-category">Hansel Training</div>
-          <div class="training-title">TRAINING SESSION — FULL BODY</div>
+          <div class="training-category">Hansel Entrenando</div>
+          <div class="training-title">SESIÓN DE ENTRENAMIENTO — CUERPO COMPLETO</div>
         </div>
       </div>
-
       <div class="training-card reveal reveal-delay-1" data-category="coaching">
         <div class="training-thumb">
-          <img src="public/images/about/about-coaching.jpeg"
-               alt="Online coaching session"
+          <img src="public/images/about/about-coaching.jpeg" alt="Sesión de coaching online"
                loading="lazy" decoding="async" width="400" height="250" />
-          <div class="training-thumb-overlay">
-            <div class="play-badge" aria-hidden="true">▶</div>
-          </div>
-          <span class="coming-soon-badge">Coming Soon</span>
+          <div class="training-thumb-overlay"><div class="play-badge" aria-hidden="true">▶</div></div>
+          <span class="coming-soon-badge">Próximamente</span>
         </div>
         <div class="training-meta">
-          <div class="training-category">Coaching Sessions</div>
-          <div class="training-title">ONLINE COACHING — HOW IT WORKS</div>
+          <div class="training-category">Sesiones de Coaching</div>
+          <div class="training-title">COACHING ONLINE — CÓMO FUNCIONA</div>
         </div>
       </div>
-
       <div class="training-card reveal reveal-delay-2" data-category="library">
         <div class="training-thumb">
-          <img src="public/images/about/about-assessment.jpeg"
-               alt="Exercise technique demonstration"
+          <img src="public/images/about/about-assessment.jpeg" alt="Técnica de ejercicio"
                loading="lazy" decoding="async" width="400" height="250" />
-          <div class="training-thumb-overlay">
-            <div class="play-badge" aria-hidden="true">▶</div>
-          </div>
-          <span class="coming-soon-badge">Coming Soon</span>
+          <div class="training-thumb-overlay"><div class="play-badge" aria-hidden="true">▶</div></div>
+          <span class="coming-soon-badge">Próximamente</span>
         </div>
         <div class="training-meta">
-          <div class="training-category">Exercise Library</div>
-          <div class="training-title">SQUAT — TECHNIQUE BREAKDOWN</div>
+          <div class="training-category">Biblioteca de Ejercicios</div>
+          <div class="training-title">SENTADILLA — ANÁLISIS DE TÉCNICA</div>
         </div>
       </div>
-
       <div class="training-card reveal reveal-delay-3" data-category="progress">
         <div class="training-thumb">
-          <img src="public/images/methodology/method-execution.jpeg"
-               alt="Client progress video"
+          <img src="public/images/methodology/method-execution.jpeg" alt="Progreso de cliente"
                loading="lazy" decoding="async" width="400" height="250" />
-          <div class="training-thumb-overlay">
-            <div class="play-badge" aria-hidden="true">▶</div>
-          </div>
-          <span class="coming-soon-badge">Coming Soon</span>
+          <div class="training-thumb-overlay"><div class="play-badge" aria-hidden="true">▶</div></div>
+          <span class="coming-soon-badge">Próximamente</span>
         </div>
         <div class="training-meta">
-          <div class="training-category">Client Progress</div>
-          <div class="training-title">STRENGTH PROGRESSION — 12 WEEKS</div>
+          <div class="training-category">Progreso de Clientes</div>
+          <div class="training-title">PROGRESIÓN DE FUERZA — 12 SEMANAS</div>
         </div>
       </div>
-
     </div>
-
-    <!-- How to add new entries - developer note -->
-    <!--
-      To add a new video card, copy any .training-card above and:
-      - Set data-category to: training | coaching | library | progress
-      - Replace the img src with your thumbnail
-      - Remove the "coming-soon-badge" span when a real video is available
-      - Add data-video-src="your-video.mp4" or data-video-url="https://cloudflare-stream-url"
-        and wire up the JS player when ready
-    -->
-
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════
-     §7 FAQ
-     ════════════════════════════════════════════════════════ -->
-<section id="faq" class="section-pad" aria-label="Frequently Asked Questions">
+<!-- §7 FAQ -->
+<section id="faq" class="section-pad" aria-label="Preguntas frecuentes">
   <div class="container">
     <div class="faq-grid">
-
-      <!-- Sidebar -->
       <div class="faq-sidebar reveal-left">
         <div class="label-row" style="margin-bottom:20px;">
           <span class="line-gold" aria-hidden="true"></span>
           <span class="section-label">FAQ</span>
         </div>
-        <h2 class="faq-sidebar-title">COMMON<br>QUESTIONS.</h2>
-        <p class="faq-sidebar-desc">
-          If you don't find what you're looking for, reach out directly.
-          Every situation is different.
-        </p>
-        <a href="#contact" class="btn btn-outline-gold btn-arrow">ASK DIRECTLY</a>
+        <h2 class="faq-sidebar-title">PREGUNTAS<br>FRECUENTES.</h2>
+        <p class="faq-sidebar-desc">Si no encuentras lo que buscas, escríbeme directamente. Cada situación es diferente.</p>
+        <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20tengo%20una%20pregunta%20sobre%20tus%20servicios."
+           class="btn btn-outline-gold btn-arrow" target="_blank" rel="noopener noreferrer">
+          PREGUNTAR DIRECTAMENTE
+        </a>
       </div>
 
-      <!-- Accordion -->
       <div class="faq-list reveal" role="list">
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-controls="faq1" id="faq1-btn">
-            How does online coaching work?
+          <button class="faq-question" aria-controls="faq1" id="faq1-btn" aria-expanded="false">
+            ¿Cómo funciona el coaching online?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq1" role="region" aria-labelledby="faq1-btn">
             <div class="faq-answer-inner">
-              Online coaching is a fully remote service. After an initial assessment where I get to know your goals, experience and schedule, I design a personalized training program for you. We then stay in regular contact through weekly check-ins, video reviews and direct messaging. The frequency and format of follow-up can vary — reach out to discuss what fits best for your situation.
+              El coaching online es un servicio completamente remoto. Después de una evaluación inicial donde conozco tus metas, experiencia y horario, diseño un programa de entrenamiento personalizado para ti. Luego mantenemos contacto regular mediante seguimientos semanales, revisión de videos y mensajería directa.
             </div>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-controls="faq2" id="faq2-btn">
-            What is included in personal training?
+          <button class="faq-question" aria-controls="faq2" id="faq2-btn" aria-expanded="false">
+            ¿Qué incluye el entrenamiento personal presencial?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq2" role="region" aria-labelledby="faq2-btn">
             <div class="faq-answer-inner">
-              Personal training sessions are conducted one-on-one, with full technical supervision throughout. Each session is structured according to a progressive program, and I make real-time corrections and adjustments as we train. Contact me to discuss session frequency, location and format in your specific case.
+              Las sesiones son individuales, con supervisión técnica completa durante toda la sesión. Cada sesión sigue un programa progresivo y realizo correcciones en tiempo real. Escríbeme para hablar de frecuencia, lugar y formato según tu caso.
             </div>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-controls="faq3" id="faq3-btn">
-            How is my workout plan customized?
+          <button class="faq-question" aria-controls="faq3" id="faq3-btn" aria-expanded="false">
+            ¿Cómo se personaliza mi plan de entrenamiento?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq3" role="region" aria-labelledby="faq3-btn">
             <div class="faq-answer-inner">
-              Every plan starts with understanding you specifically — your goal, your current fitness level, how many days per week you can train, what equipment you have access to and any physical limitations to consider. The program is built from that information, not from a template.
+              Todo comienza entendiéndote a ti — tu meta, tu nivel actual, cuántos días puedes entrenar, qué equipamiento tienes y cualquier limitación física. El programa se construye desde esa información, no desde una plantilla genérica.
             </div>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-controls="faq4" id="faq4-btn">
-            Do you provide nutrition guidance?
+          <button class="faq-question" aria-controls="faq4" id="faq4-btn" aria-expanded="false">
+            ¿Ofreces asesoría nutricional o planes de alimentación?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq4" role="region" aria-labelledby="faq4-btn">
             <div class="faq-answer-inner">
-              Yes. I offer personalized nutrition planning and guidance within the professional scope corresponding to my practice. This is focused on helping your nutrition support your training and recovery goals in a practical, sustainable way. Get in touch to understand exactly what this includes.
+              Sí. Ofrezco orientación y planificación nutricional personalizada dentro del alcance profesional correspondiente. El objetivo es que tu alimentación apoye tus metas de entrenamiento de forma práctica y sostenible. Escríbeme para conocer exactamente qué incluye.
             </div>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-controls="faq5" id="faq5-btn">
-            How often is my progress reviewed?
+          <button class="faq-question" aria-controls="faq5" id="faq5-btn" aria-expanded="false">
+            ¿Con qué frecuencia se revisa mi progreso?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq5" role="region" aria-labelledby="faq5-btn">
             <div class="faq-answer-inner">
-              Progress review frequency depends on the service and the arrangement we set up together. For online clients, this typically includes weekly or bi-weekly check-ins. For in-person clients, we assess within each session. The goal is always to make decisions based on how your body is actually responding — not on a fixed calendar.
+              Depende del servicio y del acuerdo que establezcamos. Para clientes online, generalmente incluye seguimientos semanales o quincenales. Para clientes presenciales, evaluamos dentro de cada sesión.
             </div>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-controls="faq6" id="faq6-btn">
-            Can beginners work with you?
+          <button class="faq-question" aria-controls="faq6" id="faq6-btn" aria-expanded="false">
+            ¿Pueden trabajar conmigo los principiantes?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq6" role="region" aria-labelledby="faq6-btn">
             <div class="faq-answer-inner">
-              Absolutely. Beginners are welcome and the program is built exactly for where you are right now — not where someone else is. Starting well matters more than starting fast, and learning proper technique from the beginning makes everything that follows more effective.
+              Por supuesto. Los principiantes son bienvenidos y el programa se construye exactamente donde estás ahora. Empezar bien es más importante que empezar rápido, y aprender la técnica correcta desde el comienzo hace que todo sea más efectivo.
             </div>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-controls="faq7" id="faq7-btn">
-            How do I get started?
+          <button class="faq-question" aria-controls="faq7" id="faq7-btn" aria-expanded="false">
+            ¿Cómo empiezo a trabajar contigo?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq7" role="region" aria-labelledby="faq7-btn">
             <div class="faq-answer-inner">
-              Fill out the application form below or contact me directly via WhatsApp. I will get back to you to schedule a brief initial conversation where we discuss your goals and how I can best help you. From there, we design the process together.
+              Completa el formulario de solicitud más abajo o contáctame directamente por WhatsApp. Te responderé para agendar una conversación inicial donde hablamos de tus metas y cómo puedo ayudarte mejor.
             </div>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-controls="faq8" id="faq8-btn">
-            How can I contact Hansel?
+          <button class="faq-question" aria-controls="faq8" id="faq8-btn" aria-expanded="false">
+            ¿Cómo puedo contactar a Hansel?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" id="faq8" role="region" aria-labelledby="faq8-btn">
             <div class="faq-answer-inner">
-              You can reach me through the form below, via WhatsApp using the floating button on this page, or through Instagram. Response times vary, but I will reply to every genuine inquiry as promptly as I can.
+              Por WhatsApp usando el botón flotante, a través del formulario de contacto, por Instagram (@johnhansel_fit), Facebook o por correo: hansel.trainer.fit@gmail.com. Respondo toda consulta genuina lo más pronto posible.
             </div>
           </div>
         </div>
@@ -845,190 +707,206 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════
-     §8 CONTACT
-     ════════════════════════════════════════════════════════ -->
-<section id="contact" class="section-pad" aria-label="Contact and Apply">
+<!-- §8 CONTACTO -->
+<section id="contact" class="section-pad" aria-label="Contacto y solicitud de asesoría">
   <div class="container">
-
     <div class="contact-grid">
 
-      <!-- Left -->
+      <!-- Izquierda -->
       <div class="contact-left">
-
         <div class="label-row reveal" style="margin-bottom:24px;">
           <span class="line-gold" aria-hidden="true"></span>
-          <span class="section-label">Get started</span>
+          <span class="section-label">Empecemos</span>
         </div>
-
         <h2 class="contact-headline reveal">
-          YOUR NEXT
-          <span>CHAPTER</span>
-          STARTS HERE.
+          TU PRÓXIMO
+          <span>CAPÍTULO</span>
+          EMPIEZA AQUÍ.
         </h2>
-
         <p class="contact-subhead reveal">
-          Ready to commit to a real process? Fill out the form and I will reach out
-          to set up an initial conversation. No pressure — just an honest conversation
-          about your goals and how I can help.
+          ¿Listo para comprometerte con un proceso real? Escríbeme o completa el formulario
+          y me pondré en contacto contigo — sin compromiso. Una conversación honesta sobre
+          tus metas y cómo puedo ayudarte.
         </p>
-
         <div class="contact-img-wrap reveal">
-          <img
-            src="public/images/contact/contact-coach.png"
-            alt="Hansel Cerquera — Personal Trainer and Coach"
-            loading="lazy" decoding="async" width="600" height="450"
-          />
+          <img src="public/images/contact/contact-coach.png"
+               alt="Hansel Cerquera — Entrenador Personal y Coach"
+               loading="lazy" decoding="async" width="600" height="450" />
         </div>
 
-        <!-- Social buttons -->
+        <!-- Botones de redes sociales con SVG reales -->
         <div class="contact-social reveal">
-          <a href="#"
-             id="wa-contact-btn"
-             data-wa
-             data-wa-msg="Hello Hansel! I saw your website and I am interested in your services."
-             class="contact-social-btn"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Contact via WhatsApp">
-            <span class="contact-social-icon" aria-hidden="true">💬</span>
-            WhatsApp — Direct Message
-          </a>
-          <a href="#"
-             data-ig
-             class="contact-social-btn"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Follow on Instagram">
-            <span class="contact-social-icon" aria-hidden="true">📷</span>
-            Instagram — @<!-- configure in js/main.js -->
-          </a>
-        </div>
 
+          <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios."
+             class="contact-social-btn contact-social-btn--wa"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Escribir a Hansel por WhatsApp">
+            <span class="contact-social-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.686 4.61 1.875 6.488L4 29l7.75-2.031A11.934 11.934 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.406 16.656c-.238.668-1.381 1.281-1.906 1.313-.488.03-1.068.12-3.438-.813-2.873-1.125-4.719-4.063-4.875-4.25-.156-.188-1.25-1.656-1.25-3.156 0-1.5.781-2.25 1.063-2.563.281-.312.625-.406.844-.406l.625.012c.187 0 .469-.063.75.594l1.031 2.563c.094.23.156.5.031.781-.125.281-.188.469-.375.688-.188.218-.406.5-.531.625-.219.219-.438.438-.219.813.219.375.969 1.594 2.094 2.563 1.438 1.25 2.625 1.656 3 1.813.375.156.594.125.813-.094.219-.219.938-1.063 1.188-1.438.25-.375.5-.313.844-.188l2.406.938c.5.188.844.25.875.5.094.563-.125 1.25-.375 1.906z"/></svg>
+            </span>
+            WhatsApp — Mensaje directo
+          </a>
+
+          <a href="https://www.instagram.com/johnhansel_fit/"
+             class="contact-social-btn contact-social-btn--ig"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Visitar Instagram de Hansel Fit">
+            <span class="contact-social-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </span>
+            Instagram — @johnhansel_fit
+          </a>
+
+          <a href="https://www.facebook.com/share/17u6CvQMzS/"
+             class="contact-social-btn contact-social-btn--fb"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Visitar Facebook de Hansel Fit">
+            <span class="contact-social-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </span>
+            Facebook — Hansel Fit
+          </a>
+
+          <a href="mailto:hansel.trainer.fit@gmail.com?subject=Consulta%20sobre%20entrenamiento%20-%20Hansel%20Fit"
+             class="contact-social-btn contact-social-btn--mail"
+             aria-label="Enviar correo a Hansel Fit">
+            <span class="contact-social-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            hansel.trainer.fit@gmail.com
+          </a>
+
+        </div>
       </div>
 
-      <!-- Right: Form -->
+      <!-- Formulario -->
       <div class="reveal-right">
-        <form id="contact-form" class="contact-form" novalidate aria-label="Coaching application form">
+        <form id="contact-form" class="contact-form" novalidate aria-label="Formulario de solicitud de asesoría">
 
           <div class="form-grid-2">
             <div class="form-group">
-              <label class="form-label" for="f-name">Name *</label>
+              <label class="form-label" for="f-name">Nombre *</label>
               <input class="form-input" type="text" id="f-name" name="name" required
-                     placeholder="Your name" autocomplete="name" />
+                     placeholder="Tu nombre" autocomplete="name" />
             </div>
             <div class="form-group">
-              <label class="form-label" for="f-email">Email *</label>
+              <label class="form-label" for="f-email">Correo *</label>
               <input class="form-input" type="email" id="f-email" name="email" required
-                     placeholder="your@email.com" autocomplete="email" />
+                     placeholder="tu@correo.com" autocomplete="email" />
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="f-service">Service of interest</label>
+            <label class="form-label" for="f-service">Servicio de interés</label>
             <select class="form-select" id="f-service" name="service">
-              <option value="" disabled selected>Select a service</option>
-              <option value="Personal Training">Personal Training</option>
-              <option value="Online Coaching">Online Coaching</option>
-              <option value="Training Plan">Personalized Training Plan</option>
-              <option value="Nutrition Plan">Nutrition Plan</option>
-              <option value="Not sure yet">Not sure yet — I would like to talk first</option>
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="Entrenamiento personal presencial">Entrenamiento personal presencial</option>
+              <option value="Coaching online">Coaching online</option>
+              <option value="Plan de entrenamiento personalizado">Plan de entrenamiento personalizado</option>
+              <option value="Plan de alimentación personalizado">Plan de alimentación personalizado</option>
+              <option value="Aún no lo sé, quiero hablar primero">Aún no lo sé, quiero hablar primero</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="f-goal">Main goal</label>
+            <label class="form-label" for="f-goal">Meta principal</label>
             <select class="form-select" id="f-goal" name="goal">
-              <option value="" disabled selected>What do you want to achieve?</option>
-              <option value="Hypertrophy / Muscle gain">Hypertrophy / Muscle gain</option>
-              <option value="Fat loss / Body recomposition">Fat loss / Body recomposition</option>
-              <option value="Strength">Strength improvement</option>
-              <option value="General fitness">General fitness and health</option>
-              <option value="Athletic performance">Athletic performance</option>
-              <option value="Other">Other</option>
+              <option value="" disabled selected>¿Qué quieres lograr?</option>
+              <option value="Hipertrofia / Ganancia muscular">Hipertrofia / Ganancia muscular</option>
+              <option value="Pérdida de grasa / Recomposición corporal">Pérdida de grasa / Recomposición corporal</option>
+              <option value="Ganar fuerza">Ganar fuerza</option>
+              <option value="Condición física general y salud">Condición física general y salud</option>
+              <option value="Rendimiento deportivo">Rendimiento deportivo</option>
+              <option value="Otro">Otro</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="f-message">Message (optional)</label>
+            <label class="form-label" for="f-message">Mensaje (opcional)</label>
             <textarea class="form-textarea" id="f-message" name="message"
-                      placeholder="Any additional information you would like to share..."></textarea>
+                      placeholder="Cuéntame algo adicional sobre ti o tu proceso..."></textarea>
           </div>
 
           <div>
             <button type="submit" class="btn btn-primary btn-arrow" style="width:100%;justify-content:center;">
-              APPLY FOR COACHING
+              SOLICITAR ASESORÍA POR WHATSAPP
             </button>
             <p class="form-notice">
-              This form opens WhatsApp or your email client with your message pre-filled.
-              No data is stored on this website. Configure your contact details in js/main.js.
+              Al enviar, se abrirá WhatsApp con tu información pre-cargada.
+              Ningún dato se almacena en este sitio web.
             </p>
           </div>
 
           <div class="form-success" id="form-success" role="alert" aria-live="polite">
-            ✓ Message prepared — WhatsApp or email should open with your details filled in.
+            ✓ Mensaje preparado — WhatsApp debería abrirse con tu información lista.
           </div>
 
         </form>
       </div>
 
     </div>
-
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════════════
-     §9 FOOTER
-     ════════════════════════════════════════════════════════ -->
+<!-- §9 FOOTER -->
 <footer id="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
 
-      <!-- Brand -->
       <div class="footer-brand">
         <span class="footer-logo">HANSEL FIT</span>
-        <span class="footer-tagline">Personal Trainer &amp; Fitness Coach</span>
-        <p>Real training. Real methodology. Real results. Built around who you are.</p>
+        <span class="footer-tagline">Entrenador Personal &amp; Fitness Coach</span>
+        <p>Entrenamiento real. Metodología real. Resultados reales. Construido alrededor de quién eres.</p>
       </div>
 
-      <!-- Nav -->
       <div>
-        <div class="footer-col-title">Navigation</div>
+        <div class="footer-col-title">Navegación</div>
         <ul class="footer-links" role="list">
-          <li><a href="#about"    class="footer-link">About</a></li>
-          <li><a href="#services" class="footer-link">Services</a></li>
-          <li><a href="#method"   class="footer-link">Method</a></li>
-          <li><a href="#results"  class="footer-link">Results</a></li>
-          <li><a href="#training" class="footer-link">Training</a></li>
+          <li><a href="#about"    class="footer-link">Sobre mí</a></li>
+          <li><a href="#services" class="footer-link">Servicios</a></li>
+          <li><a href="#method"   class="footer-link">Método</a></li>
+          <li><a href="#results"  class="footer-link">Resultados</a></li>
+          <li><a href="#training" class="footer-link">Contenido</a></li>
           <li><a href="#faq"      class="footer-link">FAQ</a></li>
         </ul>
       </div>
 
-      <!-- Services -->
       <div>
-        <div class="footer-col-title">Services</div>
+        <div class="footer-col-title">Servicios</div>
         <ul class="footer-links" role="list">
-          <li><a href="#services" class="footer-link">Personal Training</a></li>
-          <li><a href="#services" class="footer-link">Online Coaching</a></li>
-          <li><a href="#services" class="footer-link">Training Plans</a></li>
-          <li><a href="#services" class="footer-link">Nutrition Plans</a></li>
-          <li><a href="#contact"  class="footer-link">Apply Now</a></li>
+          <li><a href="#services" class="footer-link">Entrenamiento Personal</a></li>
+          <li><a href="#services" class="footer-link">Coaching Online</a></li>
+          <li><a href="#services" class="footer-link">Planes de Entrenamiento</a></li>
+          <li><a href="#services" class="footer-link">Planes de Alimentación</a></li>
+          <li><a href="#contact"  class="footer-link">Solicitar asesoría</a></li>
         </ul>
       </div>
 
-      <!-- Social -->
       <div>
-        <div class="footer-col-title">Connect</div>
+        <div class="footer-col-title">Conecta conmigo</div>
         <div class="footer-social" style="margin-bottom:20px;" role="list">
-          <a href="#" data-ig class="footer-social-icon" target="_blank"
-             rel="noopener noreferrer" aria-label="Instagram" role="listitem">IG</a>
-          <a href="#" data-wa class="footer-social-icon" target="_blank"
-             rel="noopener noreferrer" aria-label="WhatsApp" role="listitem">WA</a>
+          <a href="https://www.instagram.com/johnhansel_fit/" class="footer-social-icon"
+             target="_blank" rel="noopener noreferrer" aria-label="Instagram" role="listitem" title="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." class="footer-social-icon"
+             target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" role="listitem" title="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.686 4.61 1.875 6.488L4 29l7.75-2.031A11.934 11.934 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.406 16.656c-.238.668-1.381 1.281-1.906 1.313-.488.03-1.068.12-3.438-.813-2.873-1.125-4.719-4.063-4.875-4.25-.156-.188-1.25-1.656-1.25-3.156 0-1.5.781-2.25 1.063-2.563.281-.312.625-.406.844-.406l.625.012c.187 0 .469-.063.75.594l1.031 2.563c.094.23.156.5.031.781-.125.281-.188.469-.375.688-.188.218-.406.5-.531.625-.219.219-.438.438-.219.813.219.375.969 1.594 2.094 2.563 1.438 1.25 2.625 1.656 3 1.813.375.156.594.125.813-.094.219-.219.938-1.063 1.188-1.438.25-.375.5-.313.844-.188l2.406.938c.5.188.844.25.875.5.094.563-.125 1.25-.375 1.906z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/17u6CvQMzS/" class="footer-social-icon"
+             target="_blank" rel="noopener noreferrer" aria-label="Facebook" role="listitem" title="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="mailto:hansel.trainer.fit@gmail.com" class="footer-social-icon"
+             aria-label="Correo" role="listitem" title="Correo electrónico">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
         </div>
-        <div class="footer-col-title" style="margin-top:20px;">Contact</div>
+        <div class="footer-col-title" style="margin-top:20px;">Contacto</div>
         <ul class="footer-links">
-          <li><a href="#contact" class="footer-link">Apply for coaching</a></li>
-          <li><a href="#" data-wa class="footer-link">WhatsApp</a></li>
+          <li><a href="#contact" class="footer-link">Solicitar asesoría</a></li>
+          <li><a href="https://wa.me/573043557549?text=Hola%20Hansel." class="footer-link" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="mailto:hansel.trainer.fit@gmail.com" class="footer-link">Correo electrónico</a></li>
         </ul>
       </div>
 
@@ -1036,11 +914,11 @@
 
     <div class="footer-bottom">
       <p class="footer-copy">
-        &copy; <span id="footer-year"></span> Hansel Fit · Hansel Cerquera. All rights reserved.
+        &copy; <span id="footer-year"></span> Hansel Fit · Hansel Cerquera. Todos los derechos reservados.
       </p>
       <div class="footer-legal">
-        <a href="#" title="Privacy policy — coming soon">Privacy Policy</a>
-        <a href="#" title="Terms of service — coming soon">Terms</a>
+        <a href="#" title="Política de privacidad — próximamente">Política de privacidad</a>
+        <a href="#" title="Términos de servicio — próximamente">Términos</a>
       </div>
     </div>
   </div>
@@ -1048,55 +926,38 @@
 
 </div><!-- /#main-content -->
 
-<!-- ════════════════════════════════════════════════════════
-     CLIENT LOGIN PAGE (In Development)
-     ════════════════════════════════════════════════════════ -->
-<div id="login-page" role="main" aria-label="Client Portal — In Development">
+<!-- PORTAL DE CLIENTES -->
+<div id="login-page" role="main" aria-label="Portal de clientes — En desarrollo">
   <div class="login-logo">HANSEL FIT</div>
-  <div class="login-sub">Client Portal</div>
-
+  <div class="login-sub">Portal de Clientes</div>
   <div class="login-box">
-    <div class="login-badge">
-      <span aria-hidden="true">🔒</span>
-      MODULE IN DEVELOPMENT
-    </div>
-    <h1 class="login-title">CLIENT LOGIN</h1>
-    <p class="login-desc">
-      The private client portal is currently under development.
-      Once available, you will be able to access your personalized dashboard here.
-    </p>
+    <div class="login-badge"><span aria-hidden="true">🔒</span> MÓDULO EN DESARROLLO</div>
+    <h1 class="login-title">ACCESO CLIENTES</h1>
+    <p class="login-desc">El portal privado está actualmente en desarrollo. Pronto podrás acceder a tu panel personalizado desde aquí.</p>
     <div class="login-features" role="list">
-      <div class="login-feature" role="listitem">My Training Program</div>
-      <div class="login-feature" role="listitem">Nutrition Plan</div>
-      <div class="login-feature" role="listitem">Progress Tracking</div>
-      <div class="login-feature" role="listitem">Exercise Video Library</div>
-      <div class="login-feature" role="listitem">Direct Channel with Your Coach</div>
+      <div class="login-feature" role="listitem">Mi Programa de Entrenamiento</div>
+      <div class="login-feature" role="listitem">Plan de Alimentación</div>
+      <div class="login-feature" role="listitem">Seguimiento de Progreso</div>
+      <div class="login-feature" role="listitem">Biblioteca de Videos de Ejercicios</div>
+      <div class="login-feature" role="listitem">Canal Directo con tu Coach</div>
     </div>
     <button id="btn-back-to-site" class="btn btn-outline" style="width:100%;justify-content:center;">
-      ← BACK TO WEBSITE
+      ← VOLVER AL SITIO WEB
     </button>
   </div>
 </div>
 
-<!-- ── WhatsApp Float Button ─────────────────────────────── -->
-<a href="#contact"
-   id="wa-float"
-   class="whatsapp-float"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Contact via WhatsApp">
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios."
+   id="wa-float" class="whatsapp-float"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Contactar por WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
     <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.686 4.61 1.875 6.488L4 29l7.75-2.031A11.934 11.934 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.406 16.656c-.238.668-1.381 1.281-1.906 1.313-.488.03-1.068.12-3.438-.813-2.873-1.125-4.719-4.063-4.875-4.25-.156-.188-1.25-1.656-1.25-3.156 0-1.5.781-2.25 1.063-2.563.281-.312.625-.406.844-.406l.625.012c.187 0 .469-.063.75.594l1.031 2.563c.094.23.156.5.031.781-.125.281-.188.469-.375.688-.188.218-.406.5-.531.625-.219.219-.438.438-.219.813.219.375.969 1.594 2.094 2.563 1.438 1.25 2.625 1.656 3 1.813.375.156.594.125.813-.094.219-.219.938-1.063 1.188-1.438.25-.375.5-.313.844-.188l2.406.938c.5.188.844.25.875.5.094.563-.125 1.25-.375 1.906z"/>
   </svg>
 </a>
 
-<!-- ── Footer year auto-update ────────────────────────────── -->
-<script>
-  document.getElementById('footer-year').textContent = new Date().getFullYear();
-</script>
-
-<!-- ── Main JavaScript ────────────────────────────────────── -->
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 <script src="js/main.js"></script>
-
 </body>
 </html>
