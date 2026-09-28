@@ -1,0 +1,6 @@
+Carpeta: about
+
+Agrega aquí las imágenes correspondientes:
+- about-portrait.webp
+- about-coaching.webp
+- about-assessment.webp

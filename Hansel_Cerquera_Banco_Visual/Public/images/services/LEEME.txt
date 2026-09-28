@@ -1,0 +1,7 @@
+Carpeta: services
+
+Agrega aquí las imágenes correspondientes:
+- service-personal-training.webp
+- service-online-coaching.webp
+- service-training-plans.webp
+- service-nutrition.webp

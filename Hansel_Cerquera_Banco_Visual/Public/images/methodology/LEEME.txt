@@ -1,0 +1,7 @@
+Carpeta: methodology
+
+Agrega aquí las imágenes correspondientes:
+- method-assessment.webp
+- method-planning.webp
+- method-execution.webp
+- method-progress.webp

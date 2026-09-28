@@ -1,0 +1,8 @@
+Carpeta: transformations
+
+Agrega aquí las imágenes correspondientes:
+- results-juan-before.webp
+- results-juan-after.webp
+- results-client-02-before.webp
+- results-client-02-after.webp
+- results-testimonial-01.webp

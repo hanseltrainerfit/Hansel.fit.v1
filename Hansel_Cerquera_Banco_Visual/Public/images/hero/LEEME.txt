@@ -1,0 +1,5 @@
+Carpeta: hero
+
+Agrega aquí las imágenes correspondientes:
+- hero-main.webp
+- hero-training.webp
