@@ -44,16 +44,21 @@
         <span class="logo-sub">Entrenador Personal</span>
       </a>
       <ul class="nav-links" role="list">
-        <li><a href="#about"    class="nav-link" data-section="about">Sobre mí</a></li>
-        <li><a href="#services" class="nav-link" data-section="services">Servicios</a></li>
-        <li><a href="#method"   class="nav-link" data-section="method">Método</a></li>
-        <li><a href="#results"  class="nav-link" data-section="results">Resultados</a></li>
-        <li><a href="#training" class="nav-link" data-section="training">Contenido</a></li>
-        <li><a href="#faq"      class="nav-link" data-section="faq">FAQ</a></li>
-        <li><a href="#contact"  class="nav-link" data-section="contact">Contacto</a></li>
+        <li><a href="#about"    class="nav-link" data-section="about" data-i18n="nav.about">Sobre mí</a></li>
+        <li><a href="#services" class="nav-link" data-section="services" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#method"   class="nav-link" data-section="method" data-i18n="nav.method">Método</a></li>
+        <li><a href="#results"  class="nav-link" data-section="results" data-i18n="nav.results">Resultados</a></li>
+        <li><a href="#training" class="nav-link" data-section="training" data-i18n="nav.training">Contenido</a></li>
+        <li><a href="#faq"      class="nav-link" data-section="faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contact"  class="nav-link" data-section="contact" data-i18n="nav.contact">Contacto</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="#" id="btn-login" class="btn-login" aria-label="Portal de clientes">PORTAL CLIENTES</a>
+        <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma / Switch language" title="Switch language">
+          <span class="lang-opt lang-opt--active" data-lang="es">ES</span>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+        <a href="#" id="btn-login" class="btn-login" aria-label="Portal de clientes" data-i18n="nav.login">PORTAL CLIENTES</a>
         <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -89,9 +94,9 @@
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-line" aria-hidden="true"></span>
-      <span class="hero-eyebrow-text">Entrenador Personal &amp; Fitness Coach</span>
+      <span class="hero-eyebrow-text" data-i18n="hero.eyebrow">Entrenador Personal &amp; Fitness Coach</span>
     </div>
-    <h1 class="hero-title">
+    <h1 class="hero-title" data-i18n-html="hero.title">
       ENTRENA
       <em>CON</em>
       PROPÓSITO.
@@ -104,10 +109,10 @@
       <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20quiero%20comenzar%20mi%20transformaci%C3%B3n%20y%20solicitar%20asesor%C3%ADa."
          class="btn btn-primary btn-arrow"
          target="_blank" rel="noopener noreferrer"
-         aria-label="Comenzar mi transformación por WhatsApp">
+         aria-label="Comenzar mi transformación por WhatsApp" data-i18n="hero.cta1">
         COMENZAR MI TRANSFORMACIÓN
       </a>
-      <a href="#services" class="btn btn-outline">VER MIS SERVICIOS</a>
+      <a href="#services" class="btn btn-outline" data-i18n="hero.cta2">VER MIS SERVICIOS</a>
     </div>
     <div class="hero-scroll" aria-hidden="true">
       <div class="scroll-line"></div>
@@ -122,7 +127,7 @@
       decoding="async"
     />
     <div class="hero-image-overlay" aria-hidden="true"></div>
-    <div class="hero-badge">Entrena con propósito</div>
+    <div class="hero-badge" data-i18n="hero.badge">Entrena con propósito</div>
   </div>
 </section>
 
@@ -194,6 +199,22 @@
   </div>
 </section>
 
+
+<!-- CTA Strip 1 -->
+<div class="cta-strip cta-strip--dark" aria-label="Llamada a la acción">
+  <div class="container cta-strip-inner">
+    <div class="cta-strip-content">
+      <p class="cta-strip-eyebrow" data-i18n="cta1.eyebrow">¿No sabes qué servicio es el indicado para ti?</p>
+      <p class="cta-strip-sub" data-i18n="cta1.sub">Sin compromiso — solo una conversación honesta sobre tus metas.</p>
+    </div>
+    <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20no%20sé%20qué%20servicio%20me%20conviene%20más%20y%20quisiera%20hablar%20contigo."
+       class="btn btn-primary btn-arrow"
+       target="_blank" rel="noopener noreferrer"
+       data-i18n="cta1.btn">
+      HABLEMOS SIN COMPROMISO
+    </a>
+  </div>
+</div>
 <!-- §3 SERVICIOS -->
 <section id="services" class="section-pad" aria-label="Servicios">
   <div class="container">
@@ -793,6 +814,22 @@
   </div>
 </section>
 
+
+<!-- CTA Strip 2 -->
+<div class="cta-strip cta-strip--gold" aria-label="Llamada a la acción">
+  <div class="container cta-strip-inner">
+    <div class="cta-strip-content">
+      <p class="cta-strip-eyebrow" data-i18n="cta2.eyebrow">¿Listo para convertirte en el próximo caso de éxito?</p>
+      <p class="cta-strip-sub" data-i18n="cta2.sub">Cada transformación empieza con una sola decisión.</p>
+    </div>
+    <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20estoy%20listo%20para%20comenzar%20mi%20proceso%20de%20transformaci%C3%B3n."
+       class="btn btn-outline btn-arrow"
+       target="_blank" rel="noopener noreferrer"
+       data-i18n="cta2.btn">
+      INICIAR MI PROCESO
+    </a>
+  </div>
+</div>
 <!-- §8 CONTACTO -->
 <section id="contact" class="section-pad" aria-label="Contacto y solicitud de asesoría">
   <div class="container">
@@ -1045,5 +1082,23 @@
 
 <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 <script src="js/main.js"></script>
+
+<!-- Barra sticky móvil -->
+<div class="mobile-sticky-bar" id="mobile-sticky-bar" role="complementary" aria-label="Contacto rápido">
+  <a href="https://wa.me/573043557549?text=Hola%20Hansel%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n."
+     class="mobile-sticky-wa"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Escribir por WhatsApp">
+    <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.686 4.61 1.875 6.488L4 29l7.75-2.031A11.934 11.934 0 0016 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.406 16.656c-.238.668-1.381 1.281-1.906 1.313-.488.03-1.068.12-3.438-.813-2.873-1.125-4.719-4.063-4.875-4.25-.156-.188-1.25-1.656-1.25-3.156 0-1.5.781-2.25 1.063-2.563.281-.312.625-.406.844-.406l.625.012c.187 0 .469-.063.75.594l1.031 2.563c.094.23.156.5.031.781-.125.281-.188.469-.375.688-.188.218-.406.5-.531.625-.219.219-.438.438-.219.813.219.375.969 1.594 2.094 2.563 1.438 1.25 2.625 1.656 3 1.813.375.156.594.125.813-.094.219-.219.938-1.063 1.188-1.438.25-.375.5-.313.844-.188l2.406.938c.5.188.844.25.875.5.094.563-.125 1.25-.375 1.906z"/>
+    </svg>
+    <span data-i18n="sticky.wa">Escribir por WhatsApp</span>
+  </a>
+  <a href="#contact"
+     class="mobile-sticky-cta"
+     data-i18n="sticky.cta">
+    SOLICITAR ASESORÍA
+  </a>
+</div>
 </body>
 </html>

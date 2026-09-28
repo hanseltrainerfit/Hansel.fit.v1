@@ -1,6 +1,6 @@
 /**
- * HANSEL FIT — main.js v2.0
- * Interacciones, animaciones y funcionalidades dinámicas.
+ * HANSEL FIT — main.js v2.1
+ * Interacciones, animaciones, funcionalidades dinámicas y toggle de idioma.
  * Compatible con apertura directa por file:// (sin módulos ES, sin fetch).
  */
 
@@ -17,24 +17,136 @@
     contactEmail:       'hansel.trainer.fit@gmail.com'
   };
 
+  /* ── Traducciones ES / EN ─────────────────────────────────
+     Usa data-i18n="clave"      → textContent
+     Usa data-i18n-html="clave" → innerHTML (soporta <em>, <br>)
+  ────────────────────────────────────────────────────────── */
+  var TRANSLATIONS = {
+    es: {
+      /* Navegación */
+      'nav.about':    'Sobre mí',
+      'nav.services': 'Servicios',
+      'nav.method':   'Método',
+      'nav.results':  'Resultados',
+      'nav.training': 'Contenido',
+      'nav.faq':      'FAQ',
+      'nav.contact':  'Contacto',
+      'nav.login':    'PORTAL CLIENTES',
+      /* Hero */
+      'hero.eyebrow': 'Entrenador Personal &amp; Fitness Coach',
+      'hero.title':   'ENTRENA\n      <em>CON</em>\n      PROPÓSITO.',
+      'hero.cta1':    'COMENZAR MI TRANSFORMACIÓN',
+      'hero.cta2':    'VER MIS SERVICIOS',
+      'hero.badge':   'Entrena con propósito',
+      /* CTA Strips */
+      'cta1.eyebrow': '¿No sabes qué servicio es el indicado para ti?',
+      'cta1.sub':     'Sin compromiso — solo una conversación honesta sobre tus metas.',
+      'cta1.btn':     'HABLEMOS SIN COMPROMISO',
+      'cta2.eyebrow': '¿Listo para convertirte en el próximo caso de éxito?',
+      'cta2.sub':     'Cada transformación empieza con una sola decisión.',
+      'cta2.btn':     'INICIAR MI PROCESO',
+      /* Sticky móvil */
+      'sticky.wa':  'Escribir por WhatsApp',
+      'sticky.cta': 'SOLICITAR ASESORÍA'
+    },
+    en: {
+      /* Navigation */
+      'nav.about':    'About',
+      'nav.services': 'Services',
+      'nav.method':   'Method',
+      'nav.results':  'Results',
+      'nav.training': 'Content',
+      'nav.faq':      'FAQ',
+      'nav.contact':  'Contact',
+      'nav.login':    'CLIENT PORTAL',
+      /* Hero */
+      'hero.eyebrow': 'Personal Trainer &amp; Fitness Coach',
+      'hero.title':   'TRAIN\n      <em>WITH</em>\n      PURPOSE.',
+      'hero.cta1':    'START MY TRANSFORMATION',
+      'hero.cta2':    'SEE MY SERVICES',
+      'hero.badge':   'Train with purpose',
+      /* CTA Strips */
+      'cta1.eyebrow': 'Not sure which service is right for you?',
+      'cta1.sub':     'No strings attached — just an honest conversation about your goals.',
+      'cta1.btn':     "LET'S TALK",
+      'cta2.eyebrow': 'Ready to become the next success story?',
+      'cta2.sub':     'Every transformation starts with a single decision.',
+      'cta2.btn':     'START MY PROCESS',
+      /* Mobile sticky */
+      'sticky.wa':  'WhatsApp',
+      'sticky.cta': 'REQUEST COACHING'
+    }
+  };
+
+  /* ── Estado del idioma ─────────────────────────────────── */
+  var currentLang = localStorage.getItem('hf-lang') || 'es';
+
+  /* ── Aplicar traducciones al DOM ──────────────────────── */
+  function applyTranslations(lang) {
+    var t = TRANSLATIONS[lang];
+    if (!t) return;
+
+    /* Texto simple: data-i18n */
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+
+    /* Texto con HTML: data-i18n-html */
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-html');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    /* Actualizar atributo lang del <html> */
+    document.documentElement.lang = lang;
+  }
+
+  /* ── Toggle de idioma ─────────────────────────────────── */
+  function initLangToggle() {
+    var btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+
+    /* Aplicar idioma guardado al cargar */
+    applyTranslations(currentLang);
+    updateToggleUI(btn, currentLang);
+
+    btn.addEventListener('click', function () {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      localStorage.setItem('hf-lang', currentLang);
+      applyTranslations(currentLang);
+      updateToggleUI(btn, currentLang);
+    });
+  }
+
+  function updateToggleUI(btn, lang) {
+    btn.querySelectorAll('.lang-opt').forEach(function (opt) {
+      if (opt.getAttribute('data-lang') === lang) {
+        opt.classList.add('lang-opt--active');
+      } else {
+        opt.classList.remove('lang-opt--active');
+      }
+    });
+    btn.setAttribute('aria-label', lang === 'es'
+      ? 'Idioma actual: Español. Cambiar a inglés'
+      : 'Current language: English. Switch to Spanish'
+    );
+  }
+
   /* ── Utilidad: construir enlace de WhatsApp ───────────── */
   function waLink(msg) {
     var m = msg || CONFIG.whatsappDefaultMsg;
     return 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(m);
   }
 
-  /* ── Inicializar WhatsApp (solo elementos data-wa legados) */
+  /* ── Inicializar WhatsApp (elementos data-wa legados) ─── */
   function initWhatsApp() {
-    // El botón flotante ya tiene href real en el HTML
-    // Solo procesamos elementos con [data-wa] si quedan del HTML v1
     document.querySelectorAll('[data-wa]').forEach(function (el) {
       var msg = el.getAttribute('data-wa-msg') || CONFIG.whatsappDefaultMsg;
       el.href = waLink(msg);
       el.setAttribute('target', '_blank');
       el.setAttribute('rel', 'noopener noreferrer');
     });
-
-    // Elementos con [data-ig] legados
     document.querySelectorAll('[data-ig]').forEach(function (el) {
       el.href = CONFIG.instagramUrl;
     });
@@ -80,7 +192,7 @@
 
   /* ── Menú móvil ───────────────────────────────────────── */
   function initMobileMenu() {
-    var hamburger = document.getElementById('hamburger');
+    var hamburger  = document.getElementById('hamburger');
     var mobileMenu = document.getElementById('mobile-menu');
     var mobileLinks = document.querySelectorAll('.mobile-nav-link');
     if (!hamburger || !mobileMenu) return;
@@ -105,6 +217,7 @@
       document.body.style.overflow = '';
       setTimeout(function () { mobileMenu.classList.remove('visible'); }, 400);
     }
+
     hamburger.addEventListener('click', function () {
       if (mobileMenu.classList.contains('open')) closeMenu();
       else openMenu();
@@ -113,10 +226,23 @@
     mobileMenu.addEventListener('click', function (e) {
       if (e.target === mobileMenu) closeMenu();
     });
-    // ESC para cerrar
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
     });
+  }
+
+  /* ── Ocultar barra sticky al llegar a §8 Contacto ──────── */
+  function initStickyBar() {
+    var bar = document.getElementById('mobile-sticky-bar');
+    if (!bar) return;
+    var contact = document.getElementById('contact');
+    if (!contact || !('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        bar.style.transform = entry.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+      });
+    }, { threshold: 0.1 });
+    obs.observe(contact);
   }
 
   /* ── Scroll Reveal ────────────────────────────────────── */
@@ -142,12 +268,11 @@
   function initFAQ() {
     var items = document.querySelectorAll('.faq-item');
     items.forEach(function (item) {
-      var btn = item.querySelector('.faq-question');
+      var btn    = item.querySelector('.faq-question');
       var answer = item.querySelector('.faq-answer');
       if (!btn || !answer) return;
       btn.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
-        // cerrar todos
         items.forEach(function (i) {
           i.classList.remove('open');
           var a = i.querySelector('.faq-answer');
@@ -162,10 +287,7 @@
         }
       });
       btn.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          btn.click();
-        }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
       });
     });
   }
@@ -184,11 +306,10 @@
 
       function setPosition(p) {
         pct = Math.max(2, Math.min(98, p));
-        divider.style.left = pct + '%';
-        handle.style.left  = pct + '%';
+        divider.style.left   = pct + '%';
+        handle.style.left    = pct + '%';
         beforeImg.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
       }
-
       setPosition(50);
 
       function getPercent(clientX) {
@@ -196,30 +317,18 @@
         return ((clientX - rect.left) / rect.width) * 100;
       }
 
-      // Ratón
       wrapper.addEventListener('mousedown', function (e) {
-        dragging = true;
-        setPosition(getPercent(e.clientX));
-        e.preventDefault();
+        dragging = true; setPosition(getPercent(e.clientX)); e.preventDefault();
       });
-      document.addEventListener('mousemove', function (e) {
-        if (!dragging) return;
-        setPosition(getPercent(e.clientX));
-      });
+      document.addEventListener('mousemove', function (e) { if (dragging) setPosition(getPercent(e.clientX)); });
       document.addEventListener('mouseup', function () { dragging = false; });
-
-      // Táctil
       wrapper.addEventListener('touchstart', function (e) {
-        dragging = true;
-        setPosition(getPercent(e.touches[0].clientX));
+        dragging = true; setPosition(getPercent(e.touches[0].clientX));
       }, { passive: true });
       wrapper.addEventListener('touchmove', function (e) {
-        if (!dragging) return;
-        setPosition(getPercent(e.touches[0].clientX));
+        if (dragging) setPosition(getPercent(e.touches[0].clientX));
       }, { passive: true });
       wrapper.addEventListener('touchend', function () { dragging = false; });
-
-      // Teclado
       wrapper.addEventListener('keydown', function (e) {
         if (e.key === 'ArrowLeft')  setPosition(pct - 5);
         if (e.key === 'ArrowRight') setPosition(pct + 5);
@@ -237,8 +346,7 @@
         btn.classList.add('active');
         var filter = btn.getAttribute('data-filter');
         cards.forEach(function (card) {
-          var cat = card.getAttribute('data-category');
-          card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+          card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? '' : 'none';
         });
       });
     });
@@ -256,7 +364,6 @@
       var goal    = (form.querySelector('[name="goal"]')    || {}).value || '';
       var message = (form.querySelector('[name="message"]') || {}).value || '';
 
-      // Validar nombre
       if (!name.trim()) {
         var nameInput = form.querySelector('[name="name"]');
         if (nameInput) {
@@ -267,21 +374,24 @@
         return;
       }
 
-      var msg = 'Hola Hansel, mi nombre es ' + name.trim() + '.'
-        + (service ? ' Estoy interesado en: ' + service + '.' : '')
-        + (goal    ? ' Mi meta principal es: ' + goal + '.' : '')
-        + (message ? ' Información adicional: ' + message.trim() : '');
+      var isES = currentLang === 'es';
+      var msg = isES
+        ? 'Hola Hansel, mi nombre es ' + name.trim() + '.'
+          + (service ? ' Estoy interesado en: ' + service + '.' : '')
+          + (goal    ? ' Mi meta principal es: ' + goal + '.' : '')
+          + (message ? ' Info adicional: ' + message.trim() : '')
+        : 'Hello Hansel, my name is ' + name.trim() + '.'
+          + (service ? ' I\'m interested in: ' + service + '.' : '')
+          + (goal    ? ' My main goal is: ' + goal + '.' : '')
+          + (message ? ' Additional info: ' + message.trim() : '');
 
-      var link = waLink(msg);
-      window.open(link, '_blank');
+      window.open(waLink(msg), '_blank');
 
       var success = document.getElementById('form-success');
       if (success) {
         success.style.display = 'block';
         setTimeout(function () { success.style.display = 'none'; }, 6000);
       }
-
-      // Limpiar formulario
       form.reset();
     });
   }
@@ -326,7 +436,7 @@
     });
   }
 
-  /* ── Parallax sutil (respeta prefers-reduced-motion) ──── */
+  /* ── Parallax sutil ───────────────────────────────────── */
   function initParallax() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var parallaxEls = document.querySelectorAll('[data-parallax]');
@@ -342,10 +452,12 @@
 
   /* ── Inicialización ───────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
+    initLangToggle();   // Primero — aplica idioma guardado
     initWhatsApp();
     initNavbar();
     initScrollSpy();
     initMobileMenu();
+    initStickyBar();
     initReveal();
     initFAQ();
     initComparators();
