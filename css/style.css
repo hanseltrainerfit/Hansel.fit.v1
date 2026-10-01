@@ -1653,52 +1653,226 @@ input, textarea, select { font: inherit; }
   html { scroll-behavior: auto; }
 }
 
-/* ── Responsive ─────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — OPTIMIZACIÓN COMPLETA PARA TODOS LOS DISPOSITIVOS
+   Breakpoints: 1200 · 900 · 768 · 480 · 375
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Tablet ancho / Desktop pequeño ─── max 1200px ──────── */
 @media (max-width: 1200px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .method-steps { grid-template-columns: repeat(2, 1fr); }
-  .training-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid    { grid-template-columns: repeat(2, 1fr); }
+  .method-steps     { grid-template-columns: repeat(2, 1fr); }
+  .training-grid    { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid      { grid-template-columns: 1fr 1fr; }
+  .results-grid     { grid-template-columns: repeat(3, 1fr); }
+  .contact-grid     { gap: clamp(32px, 4vw, 60px); }
 }
 
+/* ── Tablet / Móvil grande ─── max 900px ─────────────────── */
 @media (max-width: 900px) {
-  :root { --nav-h: 68px; }
-  #hero { grid-template-columns: 1fr; min-height: 100svh; }
-  .hero-content {
-    padding: calc(var(--nav-h) + 30px) 28px 48px;
-    min-height: 60svh;
+  :root {
+    --nav-h: 68px;
+    --section-pad: clamp(60px, 8vw, 100px);
   }
-  .hero-image-col { height: 45svh; }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-portrait { max-width: 400px; }
-  .method-intro { grid-template-columns: 1fr; }
-  .faq-grid { grid-template-columns: 1fr; }
-  .faq-sidebar { position: static; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .training-intro { grid-template-columns: 1fr; }
-  .results-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Hero — apila imagen debajo del texto */
+  #hero {
+    grid-template-columns: 1fr;
+    min-height: 100svh;
+  }
+  .hero-content {
+    padding: calc(var(--nav-h) + 32px) clamp(20px, 5vw, 48px) 52px;
+    min-height: 65svh;
+  }
+  .hero-title    { font-size: clamp(52px, 11vw, 88px); }
+  .hero-subtitle { font-size: clamp(14px, 2.2vw, 17px); max-width: 100%; }
+  .hero-cta      { gap: 14px; }
+  .hero-image-col { height: 42svh; }
+
+  /* About — portrait arriba, texto abajo */
+  .about-grid        { grid-template-columns: 1fr; }
+  .about-portrait    { max-width: 380px; margin: 0 auto; }
+
+  /* Method */
+  .method-intro      { grid-template-columns: 1fr; }
+  .method-steps      { grid-template-columns: repeat(2, 1fr); }
+
+  /* Results */
+  .results-grid      { grid-template-columns: 1fr 1fr; }
+
+  /* Testimonio foto+cita: apila en tablet */
+  .testimonial-with-photo { grid-template-columns: 1fr; }
+  .testimonial-photo-wrap { max-width: 400px; margin: 0 auto; aspect-ratio: 4/3; }
+
+  /* Training intro */
+  .training-intro    { grid-template-columns: 1fr; }
+
+  /* FAQ */
+  .faq-grid          { grid-template-columns: 1fr; }
+  .faq-sidebar       { position: static; }
+
+  /* Contacto */
+  .contact-grid      { grid-template-columns: 1fr; }
+
+  /* Navegación */
+  .hamburger         { display: flex; }
+  .nav-links         { display: none; }
+  .btn-login         { display: none; }
+  .mobile-menu       { display: flex; }
 }
 
-@media (max-width: 640px) {
+/* ── Móvil estándar ─── max 768px ────────────────────────── */
+@media (max-width: 768px) {
+  :root { --nav-h: 60px; }
+
+  /* Contenedor con más respiración lateral */
+  .container {
+    padding-left: clamp(16px, 5vw, 28px);
+    padding-right: clamp(16px, 5vw, 28px);
+  }
+
+  /* Hero */
+  .hero-content {
+    padding: calc(var(--nav-h) + 28px) 20px 44px;
+  }
+  .hero-title    { font-size: clamp(48px, 13vw, 76px); line-height: 0.9; }
+  .hero-subtitle { font-size: 14px; margin-top: 20px; }
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  .hero-scroll   { margin-top: 36px; }
+  .hero-image-col { height: 38svh; }
+
+  /* About */
+  .about-title   { font-size: clamp(32px, 8vw, 52px); }
+  .about-pillars { grid-template-columns: 1fr; gap: 10px; }
+  .about-portrait { max-width: 100%; }
+
+  /* Services */
   .services-grid { grid-template-columns: 1fr; }
-  .method-steps { grid-template-columns: 1fr; }
-  .training-grid { grid-template-columns: 1fr; }
-  .results-grid { grid-template-columns: 1fr; }
-  .about-pillars { grid-template-columns: 1fr; }
-  .form-grid-2 { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .btn-login { display: none; }
-  .mobile-menu { display: flex; }
-  .whatsapp-float { bottom: 20px; right: 20px; }
-  .hero-badge { display: none; }
+  .service-card-img { aspect-ratio: 16/9; }
+
+  /* Method */
+  .method-steps  { grid-template-columns: 1fr; }
+
+  /* Results */
+  .results-grid  { grid-template-columns: 1fr; }
+  .result-metrics { grid-template-columns: repeat(3, 1fr); }
+  .metric-value  { font-size: 16px; }
+  .metric-label  { font-size: 8px; }
+
+  /* Training */
+  .training-grid { grid-template-columns: 1fr 1fr; }
+  .training-filters { gap: 8px; }
+  .filter-btn   { font-size: 9px; padding: 8px 12px; }
+
+  /* FAQ */
+  .faq-question  { font-size: clamp(15px, 4vw, 18px); padding: 18px 16px; }
+
+  /* Contacto */
+  .contact-form  { padding: clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px); }
+  .contact-info  { gap: 24px; }
+
+  /* Footer */
+  .footer-grid   { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+  .footer-brand  { max-width: 100%; }
+
+  /* Botones globales — más fácil de tocar */
+  .btn           { padding: 15px 28px; }
+
+  /* CTA strips */
+  .cta-strip-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cta-strip-inner .btn { width: 100%; justify-content: center; }
+
+  /* WhatsApp float */
+  .whatsapp-float { bottom: 20px; right: 16px; width: 52px; height: 52px; }
+
+  /* Lang toggle — ocultar texto label si hay poco espacio */
   .lang-toggle { padding: 5px 8px; }
 }
 
-@media (min-width: 641px) {
+/* ── Móvil compacto ─── max 480px ────────────────────────── */
+@media (max-width: 480px) {
+  :root { --nav-h: 56px; }
+
+  /* Hero */
+  .hero-title    { font-size: clamp(42px, 14vw, 64px); }
+  .hero-subtitle { font-size: 13px; line-height: 1.65; }
+  .hero-eyebrow  { margin-bottom: 20px; }
+
+  /* About */
+  .about-philosophy { font-size: clamp(18px, 5vw, 24px); }
+  .about-intro   { font-size: 14px; }
+
+  /* Services — imagen más alta para ver bien la foto */
+  .service-card-img { aspect-ratio: 4/3; }
+
+  /* Method — números grandes decorativos más pequeños */
+  .step-num   { font-size: clamp(52px, 14vw, 80px); }
+  .step-title { font-size: clamp(20px, 5vw, 28px); }
+
+  /* Results */
+  .result-info { padding: 16px 16px; }
+  .result-metrics { gap: 6px; padding: 12px 0; }
+  .metric-value { font-size: 15px; }
+
+  /* Testimonio */
+  .testimonial-quote-card { padding: 24px 20px; }
+  .testimonial-quote-mark { font-size: 72px; }
+  .testimonial-quote-text { font-size: 15px; margin-bottom: 20px; }
+
+  /* Training */
+  .training-grid { grid-template-columns: 1fr; }
+
+  /* FAQ */
+  .faq-question { font-size: 14px; padding: 16px 14px; }
+  .faq-answer p { font-size: 13px; }
+
+  /* Contacto */
+  .contact-form-title { font-size: clamp(22px, 6vw, 30px); }
+  .form-submit        { width: 100%; justify-content: center; }
+
+  /* Botones globales más compactos */
+  .btn { padding: 14px 22px; font-size: 11px; letter-spacing: 0.14em; }
+
+  /* Menú móvil padding */
+  .mobile-menu { padding: 100px 24px 48px; }
+}
+
+/* ── Móvil muy pequeño ─── max 375px ─────────────────────── */
+@media (max-width: 375px) {
+  .hero-title    { font-size: 38px; }
+  .section-title { font-size: clamp(30px, 10vw, 44px); }
+  .about-title   { font-size: 28px; }
+  .metric-value  { font-size: 14px; }
+  .result-tag    { font-size: 8px; padding: 3px 7px; }
+  .btn           { padding: 13px 18px; font-size: 10px; }
+  .filter-btn    { font-size: 9px; padding: 7px 10px; }
+  .hero-cta .btn { padding: 13px 20px; }
+}
+
+/* ── Solo desktop: hamburger oculto ─── min 901px ───────── */
+@media (min-width: 901px) {
   .hamburger { display: none; }
+}
+
+/* ── Touch targets mínimos (accesibilidad táctil) ─────────── */
+@media (pointer: coarse) {
+  .btn            { min-height: 48px; }
+  .service-cta    { min-height: 48px; padding-top: 14px; padding-bottom: 14px; }
+  .faq-question   { min-height: 56px; }
+  .filter-btn     { min-height: 44px; }
+  .nav-link       { min-height: 44px; display: inline-flex; align-items: center; }
+  .mobile-nav-link { min-height: 56px; display: flex; align-items: center; }
+  .whatsapp-float { width: 56px; height: 56px; }
 }
 
 /* ══════════════════════════════════════════════════════════
