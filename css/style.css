@@ -1031,6 +1031,41 @@ input, textarea, select { font: inherit; }
   letter-spacing: 0.05em;
 }
 
+/* Layout foto + cita lado a lado */
+.testimonial-with-photo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.testimonial-photo-wrap {
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+  aspect-ratio: 3/4;
+}
+.testimonial-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+/* En la tarjeta de cita dentro del layout con foto no hace falta max-width */
+.testimonial-with-photo .testimonial-quote-card {
+  max-width: none;
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .testimonial-with-photo {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-photo-wrap {
+    aspect-ratio: 4/3;
+  }
+}
+
 .results-cta-wrap {
 
   text-align: center;
@@ -1657,14 +1692,13 @@ input, textarea, select { font: inherit; }
   .hamburger { display: flex; }
   .btn-login { display: none; }
   .mobile-menu { display: flex; }
-  .whatsapp-float { bottom: 80px; right: 16px; } /* sube sobre la barra sticky */
+  .whatsapp-float { bottom: 20px; right: 20px; }
   .hero-badge { display: none; }
   .lang-toggle { padding: 5px 8px; }
 }
 
 @media (min-width: 641px) {
   .hamburger { display: none; }
-  .mobile-sticky-bar { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1722,48 +1756,3 @@ input, textarea, select { font: inherit; }
   }
   .cta-strip-inner .btn { width: 100%; justify-content: center; }
 }
-
-/* ══════════════════════════════════════════════════════════
-   BARRA STICKY MÓVIL
-   ══════════════════════════════════════════════════════════ */
-.mobile-sticky-bar {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 990;
-  display: flex;
-  background: var(--black);
-  border-top: 1px solid rgba(185,151,81,0.25);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.35);
-}
-.mobile-sticky-wa {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 15px 12px;
-  background: #25D366;
-  color: var(--white);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: background 0.2s;
-}
-.mobile-sticky-wa:hover { background: #1ebe57; color: var(--white); }
-.mobile-sticky-cta {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 12px;
-  background: var(--gold);
-  color: var(--black);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-align: center;
-  transition: background 0.2s;
-}
-.mobile-sticky-cta:hover { background: #cba955; color: var(--black); }
