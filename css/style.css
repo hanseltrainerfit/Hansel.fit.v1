@@ -807,8 +807,8 @@ input, textarea, select { font: inherit; }
 }
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 3vw, 40px);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 30px);
   margin-bottom: clamp(48px, 6vw, 80px);
 }
 .result-card {
@@ -1664,7 +1664,7 @@ input, textarea, select { font: inherit; }
   .method-steps     { grid-template-columns: repeat(2, 1fr); }
   .training-grid    { grid-template-columns: repeat(2, 1fr); }
   .footer-grid      { grid-template-columns: 1fr 1fr; }
-  .results-grid     { grid-template-columns: repeat(3, 1fr); }
+  .results-grid     { grid-template-columns: repeat(2, 1fr); }
   .contact-grid     { gap: clamp(32px, 4vw, 60px); }
 }
 
