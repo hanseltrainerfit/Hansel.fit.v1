@@ -698,16 +698,16 @@
     </div>
 
     <div class="training-grid">
-      <div class="training-card reveal" data-category="training">
+      <div class="training-card reveal" data-category="training" data-video="public/videos/entrena-desde-casa.mp4" data-title="ENTRENA DESDE CASA — SESIÓN GUIADA">
         <div class="training-thumb">
-          <img src="public/images/hero/hero-training.jpeg" alt="Sesión de entrenamiento Hansel"
+          <img src="public/images/hero/hero-training.jpeg" alt="Sesión de entrenamiento Hansel — Entrena desde casa"
                loading="lazy" decoding="async" width="400" height="250" />
-          <div class="training-thumb-overlay"><div class="play-badge" aria-hidden="true">▶</div></div>
-          <span class="coming-soon-badge">Próximamente</span>
+          <div class="training-thumb-overlay"><div class="play-badge" aria-label="Reproducir video">▶</div></div>
+          <span class="coming-soon-badge video-available-badge">Ver Video</span>
         </div>
         <div class="training-meta">
           <div class="training-category">Hansel Entrenando</div>
-          <div class="training-title">SESIÓN DE ENTRENAMIENTO — CUERPO COMPLETO</div>
+          <div class="training-title">ENTRENA DESDE CASA — SESIÓN GUIADA</div>
         </div>
       </div>
       <div class="training-card reveal reveal-delay-1" data-category="coaching">
@@ -1123,6 +1123,21 @@
     <button id="btn-back-to-site" class="btn btn-outline" style="width:100%;justify-content:center;">
       ← VOLVER AL SITIO WEB
     </button>
+<!-- Modal de Video -->
+<div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-label="Reproductor de video">
+  <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+  <div class="video-modal-box">
+    <button class="video-modal-close" id="video-modal-close" aria-label="Cerrar reproductor">&times;</button>
+    <div class="video-modal-header">
+      <span class="video-modal-tag">HANSEL FIT · SESIÓN</span>
+      <h3 class="video-modal-title" id="video-modal-title">Entrena desde casa</h3>
+    </div>
+    <div class="video-wrapper">
+      <video id="video-player" controls preload="metadata" playsinline>
+        <source src="public/videos/entrena-desde-casa.mp4" type="video/mp4">
+        Tu navegador no soporta video HTML5.
+      </video>
+    </div>
   </div>
 </div>
 

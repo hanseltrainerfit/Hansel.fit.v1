@@ -450,6 +450,54 @@
     }, { passive: true });
   }
 
+  /* ── Modal de Video ─────────────────────────────────────── */
+  function initVideoModal() {
+    var modal    = document.getElementById('video-modal');
+    var closeBtn = document.getElementById('video-modal-close');
+    var backdrop = document.getElementById('video-modal-backdrop');
+    var player   = document.getElementById('video-player');
+    var titleEl  = document.getElementById('video-modal-title');
+    var cards    = document.querySelectorAll('.training-card[data-video]');
+
+    if (!modal || !player) return;
+
+    function openVideo(videoSrc, title) {
+      if (titleEl && title) titleEl.textContent = title;
+      if (videoSrc) {
+        var current = player.getAttribute('src');
+        if (current !== videoSrc) {
+          player.src = videoSrc;
+        }
+      }
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      player.play().catch(function () {});
+    }
+
+    function closeVideo() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      player.pause();
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var src = card.getAttribute('data-video');
+        var title = card.getAttribute('data-title') || 'Entrena desde casa';
+        openVideo(src, title);
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeVideo);
+    if (backdrop) backdrop.addEventListener('click', closeVideo);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeVideo();
+      }
+    });
+  }
+
   /* ── Inicialización ───────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     initLangToggle();   // Primero — aplica idioma guardado
@@ -462,6 +510,7 @@
     initFAQ();
     initComparators();
     initTrainingFilters();
+    initVideoModal();
     initContactForm();
     initLoginPage();
     initSmoothScroll();

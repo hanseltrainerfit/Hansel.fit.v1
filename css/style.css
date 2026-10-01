@@ -1196,6 +1196,119 @@ input, textarea, select { font: inherit; }
   line-height: 1.1;
 }
 
+.video-available-badge {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+  box-shadow: 0 4px 14px rgba(185,151,81,0.35);
+}
+.training-card[data-video] {
+  cursor: pointer;
+}
+.training-card[data-video]:hover .play-badge {
+  transform: scale(1.15);
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* ── Modal de Video ─────────────────────────────────────── */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.video-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.video-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(8px);
+}
+.video-modal-box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 860px;
+  background: var(--carbon);
+  border: 1px solid rgba(185,151,81,0.35);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.7);
+  overflow: hidden;
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s var(--ease-out);
+}
+.video-modal.open .video-modal-box {
+  transform: translateY(0) scale(1);
+}
+.video-modal-header {
+  padding: 18px 24px;
+  background: var(--black);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.video-modal-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 4px;
+}
+.video-modal-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.1;
+}
+.video-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.25s;
+}
+.video-modal-close:hover {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+}
+.video-wrapper {
+  position: relative;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 75vh;
+}
+.video-wrapper video {
+  width: 100%;
+  max-height: 75vh;
+  display: block;
+  outline: none;
+}
+
 /* ── FAQ ────────────────────────────────────────────────── */
 #faq {
   background: var(--black);
